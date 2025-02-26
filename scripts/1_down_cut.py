@@ -33,7 +33,6 @@ PIPELINE_STAGES = {
     "vad":      "Voice Activity Detection",
     "cut":      "Cut segments",
     "intro":    "Remove intro segments",
-    "upload":   "Upload to GCS"
 }
 
 # -------------------------------------------------
@@ -790,7 +789,7 @@ def run_pipeline(args):
         logger.info(f"  Total duration: {(count * avg_dur / 3600):.2f} hours\n")
         
         # Generate metadata CSV
-        metadata_csv = cut_dir / "segments_metadata.csv"
+        metadata_csv = "segments_metadata.csv"
         generate_segments_metadata(cut_dir, metadata_csv)
 
     # 4) Remove intro
@@ -827,10 +826,8 @@ def parse_args():
                         help="Max length for each cut segment")
 
     # 파이프라인 제어
-    parser.add_argument("--start_stage", type=str, choices=list(PIPELINE_STAGES.keys()),
-                        help="Start from this pipeline stage")
-    parser.add_argument("--end_stage", type=str, choices=list(PIPELINE_STAGES.keys()),
-                        help="End at this pipeline stage")
+    parser.add_argument("--start_stage", type=str, default="download")
+    parser.add_argument("--end_stage", type=str, default="intro")
 
     args = parser.parse_args()
 

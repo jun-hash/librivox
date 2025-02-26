@@ -5,4 +5,5 @@ tqdm>=4.62.0
 soundfile>=0.10.3
 scipy>=1.7.0
 matplotlib>=3.4.0
+pandas
 git+https://github.com/wonder-dot-ai/descript-audio-codec.git
