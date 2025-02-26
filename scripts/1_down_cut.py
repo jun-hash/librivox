@@ -24,6 +24,7 @@ from google.cloud import storage
 import shlex
 import pandas as pd
 from datetime import datetime
+import logging
 
 # -------------------------------------------------
 # 파이프라인 단계 정의
@@ -45,13 +46,49 @@ DEFAULT_SAMPLE_RATE         = 44100  # 이미 44.1kHz mp3를 받는다고 가정
 DEFAULT_N_PROCESSES         = multiprocessing.cpu_count()
 DEFAULT_MIN_SPEECH_DURATION = 0.5
 DEFAULT_TARGET_LEN_SEC      = 30
-DEFAULT_GCS_BUCKET          = "nari-librivox"
-DEFAULT_GCS_PREFIX          = "v0"
 DEFAULT_FORMAT              = ".mp3"
-
-# (원하는 만큼 조정 가능)
 DEFAULT_THREADS_DOWNLOAD    = 16     # 병렬 다운로드 시 스레드 개수
 DEFAULT_POOL_SIZE           = 100    # requests 세션 커넥션 풀 크기
+
+# -------------------------------------------------
+# 로거 설정
+# -------------------------------------------------
+def setup_logger(log_dir="logs", log_filename="pipeline.log"):
+    """
+    logger를 생성하고, 파일과 콘솔에 동시에 로그를 남기도록 설정.
+    """
+    os.makedirs(log_dir, exist_ok=True)
+    log_path = os.path.join(log_dir, log_filename)
+
+    logger = logging.getLogger("PipelineLogger")
+    logger.setLevel(logging.INFO)
+    logger.propagate = False  # 다른 상위 로거로 전파 방지
+
+    # 이미 핸들러가 세팅되어 있다면 재설정하지 않도록 처리
+    if not logger.handlers:
+        # 파일 핸들러
+        fh = logging.FileHandler(log_path, mode='w')
+        fh.setLevel(logging.INFO)
+
+        # 콘솔 핸들러
+        ch = logging.StreamHandler()
+        ch.setLevel(logging.INFO)
+
+        # 포맷 설정
+        formatter = logging.Formatter(
+            fmt='%(asctime)s [%(levelname)s] %(message)s',
+            datefmt='%Y-%m-%d %H:%M:%S'
+        )
+        fh.setFormatter(formatter)
+        ch.setFormatter(formatter)
+
+        logger.addHandler(fh)
+        logger.addHandler(ch)
+
+    return logger
+
+# 전역 로거
+logger = setup_logger()
 
 # -------------------------------------------------
 # 타임 트래커 유틸 (각 파이프라인 단계 시간 측정용)
@@ -65,7 +102,7 @@ class StageTimer:
 
     def end(self, stage_name):
         if stage_name not in self.times or self.times[stage_name]["start"] is None:
-            print(f"[WARN] Stage '{stage_name}' was never started.")
+            logger.warning(f"Stage '{stage_name}' was never started.")
             return
         self.times[stage_name]["end"] = time.time()
         self.times[stage_name]["duration"] = (
@@ -73,20 +110,20 @@ class StageTimer:
         )
 
     def report(self):
-        print("\n[Pipeline Stage Times]")
+        logger.info("\n[Pipeline Stage Times]")
         for stage_name, tinfo in self.times.items():
             start_t = tinfo["start"]
             end_t = tinfo["end"]
             duration = tinfo["duration"]
             if start_t is None or end_t is None or duration is None:
                 continue
-            print(f"  - {stage_name:<20}: {duration:.2f} seconds ({duration/60:.2f} minutes)")
+            logger.info(f"  - {stage_name:<20}: {duration:.2f} seconds ({duration/60:.2f} minutes)")
 
 
 # -------------------------------------------------
 # Download (MP3)
 # -------------------------------------------------
-def create_session(max_retries=3, backoff_factor=0.5, pool_connections=100, pool_maxsize=100):
+def create_session(max_retries=2, backoff_factor=0.5, pool_connections=100, pool_maxsize=100):
     """
     requests 세션(Session)을 생성.
     - HTTPAdapter로 연결 풀(pool) 크기를 설정하여 동시 다운로드 시 성능을 개선
@@ -132,12 +169,10 @@ def _download_file(url, output_dir, session=None, block_size=65536):
             total_size = int(response.headers.get('Content-Length', 0))
 
             with open(save_path, "wb") as out_file:
-                downloaded = 0
                 for chunk in response.iter_content(chunk_size=block_size):
                     if not chunk:
                         break
                     out_file.write(chunk)
-                    downloaded += len(chunk)
         return file_name, True
 
     except Exception as e:
@@ -160,7 +195,7 @@ def download_urls(urls_file, output_dir, test_sample=None, n_threads=16):
     if test_sample:
         all_urls = all_urls[:test_sample]
 
-    print(f"[Download] {len(all_urls)} URLs to download.")
+    logger.info(f"[Download] {len(all_urls)} URLs to download.")
 
     # 세션 하나를 만들어 여러 스레드에서 공유 (HTTP Connection Pool 재사용)
     session = create_session(pool_connections=DEFAULT_POOL_SIZE, pool_maxsize=DEFAULT_POOL_SIZE)
@@ -178,19 +213,18 @@ def download_urls(urls_file, output_dir, test_sample=None, n_threads=16):
                 file_name, status = future.result()
                 results.append((file_name, status))
             except Exception as e:
-                print(f"[ERROR] Download failed for {url}: {e}")
+                logger.error(f"Download failed for {url}: {e}")
                 results.append(("Unknown", False))
 
     success_count = sum(1 for _, s in results if s)
     fail_count = len(results) - success_count
-    print(f"[Download Summary] Success={success_count}, Failed={fail_count}, Total={len(all_urls)}")
+    logger.info(f"[Download Summary] Success={success_count}, Failed={fail_count}, Total={len(all_urls)}")
 
 
 # -------------------------------------------------
 # Silero VAD
 # -------------------------------------------------
-# 전역에서 한 번만 모델 로드
-print("[VAD] Loading model...")
+logger.info("[VAD] Loading model...")
 _VAD_MODEL, utils = torch.hub.load(
     repo_or_dir='snakers4/silero-vad',
     model='silero_vad',
@@ -203,7 +237,6 @@ def apply_vad(audio_path, sample_rate=16000, min_speech_duration=0.5):
     """
     VAD를 적용하여 (start, end) 초 단위 구간을 반환
     """
-    # 전역 모델 사용
     global _VAD_MODEL, _GET_TIMESTAMPS
 
     # stereo mp3를 로드하되, 모노 합성을 위해 mean(dim=0)
@@ -237,15 +270,14 @@ def save_vad_results(audio_path, vad_segments, output_file):
         json.dump(data, f, indent=2)
 
 def _process_vad_single(args):
-    """VAD 처리 작업자 함수 수정"""
+    """VAD 처리 작업자 함수."""
     audio_path, input_dir, sample_rate, min_speech_duration = args
     try:
-        # 각 프로세스에서 처음 실행될 때 모델 로드
         segments = apply_vad(audio_path, sample_rate=sample_rate, min_speech_duration=min_speech_duration)
         rel_path = os.path.relpath(audio_path, input_dir)
         return rel_path, segments
     except Exception as e:
-        print(f"[ERROR] VAD processing failed for {audio_path}: {str(e)}")
+        logger.error(f"VAD processing failed for {audio_path}: {str(e)}")
         return None, None
 
 def process_vad(
@@ -270,7 +302,7 @@ def process_vad(
     if test_sample:
         audio_files = audio_files[:test_sample]
 
-    print(f"[VAD] Found {len(audio_files)} audio files.")
+    logger.info(f"[VAD] Found {len(audio_files)} audio files.")
     os.makedirs(output_dir, exist_ok=True)
 
     # 3) 이미 처리된 파일 스킵하기
@@ -281,12 +313,12 @@ def process_vad(
 
         # 이미 결과 파일이 존재하면 스킵
         if os.path.exists(json_out):
-            print(f"[VAD] Skipped already processed file: {rel_path}")
+            logger.info(f"[VAD] Skipped already processed file: {rel_path}")
             continue
 
         tasks.append((audio_path, input_dir, sample_rate, min_speech_duration))
 
-    print(f"[VAD] Processing {len(tasks)} files (others skipped).")
+    logger.info(f"[VAD] Processing {len(tasks)} files (others skipped).")
 
     # 4) 멀티프로세스를 활용한 처리
     with multiprocessing.Pool(processes=n_processes) as pool:
@@ -297,10 +329,10 @@ def process_vad(
                     json_out = os.path.join(output_dir, os.path.splitext(rel_path)[0] + '.json')
                     os.makedirs(os.path.dirname(json_out), exist_ok=True)
                     save_vad_results(os.path.join(input_dir, rel_path), segments, json_out)
-                    print(f"[VAD] Processed file: {rel_path}")
+                    logger.info(f"[VAD] Processed file: {rel_path}")
                 pbar.update()
 
-    print("[VAD] Processing completed.")
+    logger.info("[VAD] Processing completed.")
 
 
 # -------------------------------------------------
@@ -310,13 +342,6 @@ def unify_vad_segments(vad_list, min_len=15.0, max_len=30.0, eps=1e-6):
     """
     VAD로 나온 구간(초 단위 start/end)을 합쳐서
     하나의 구간이 최대 max_len(기본 30초)을 넘지 않도록 분할/병합하는 함수.
-    
-    - vad_list: [{"start": float, "end": float}, ...] 형태의 리스트
-    - min_len: 최소 길이(이보다 짧으면 최종 구간으로 채택 X)
-    - max_len: 최대 길이(이보다 길면 여러 조각으로 쪼갬)
-    - eps: float 비교용 작은 값
-    
-    반환값: [(start_sec, end_sec), (start_sec, end_sec), ...] 형태의 리스트
     """
     final_segments = []
     current_chunk = []  # 현재 모으고 있는 segment들의 리스트 (start, end) 튜플들
@@ -351,9 +376,7 @@ def unify_vad_segments(vad_list, min_len=15.0, max_len=30.0, eps=1e-6):
 
         # 1) VAD segment 자체가 max_len보다 클 때 => 통째로 쪼갠 뒤, current_chunk에 합치지 않음
         if seg_len > max_len + eps:
-            # 현재까지 모은 청크를 먼저 flush
             flush_chunk()
-
             # seg를 여러 조각으로 분할
             t = start
             while t < end - eps:
@@ -372,7 +395,6 @@ def unify_vad_segments(vad_list, min_len=15.0, max_len=30.0, eps=1e-6):
 
             # 새 seg를 합친 예상 길이
             if (current_len + seg_len) > max_len + eps:
-                # 이미 모은 청크를 flush하고, seg는 새 청크로 시작
                 flush_chunk()
 
         # 3) current_chunk가 비어 있으면 바로 seg 추가, 아니면 이어붙임
@@ -381,9 +403,7 @@ def unify_vad_segments(vad_list, min_len=15.0, max_len=30.0, eps=1e-6):
         else:
             current_chunk.append((start, end))
 
-    # 반복문 종료 후 남은 chunk도 flush
     flush_chunk()
-
     return final_segments
 
 def cut_segments_ffmpeg(infile, segments, outdir, sub_batch_size=20):
@@ -421,7 +441,7 @@ def cut_segments_ffmpeg(infile, segments, outdir, sub_batch_size=20):
             subprocess.run(cmd, check=True)
         except subprocess.CalledProcessError:
             # Fallback to re-encoding if copy fails
-            tqdm.tqdm.write(f"[WARN] -c copy failed => re-encoding sub-batch for {infile}")
+            logger.warning(f"[WARN] -c copy failed => re-encoding sub-batch for {infile}")
             cmd_parts_re = []
             for idx, (start, end) in enumerate(sub):
                 duration = round(end - start, 3)
@@ -438,7 +458,7 @@ def cut_segments_ffmpeg(infile, segments, outdir, sub_batch_size=20):
             try:
                 subprocess.run(cmd_reencode, check=True)
             except subprocess.CalledProcessError as e:
-                tqdm.tqdm.write(f"[ERROR] Even re-encoding failed => skip sub-batch. {e}")
+                logger.error(f"[ERROR] Even re-encoding failed => skip sub-batch. {e}")
 
 def _process_cut_single(args):
     """Worker function for cutting audio files."""
@@ -495,7 +515,7 @@ def process_cut(
 
     if test_sample:
         json_files = json_files[:test_sample]
-    print(f"[Cut] Found {len(json_files)} VAD json files.")
+    logger.info(f"[Cut] Found {len(json_files)} VAD json files.")
 
     os.makedirs(output_dir, exist_ok=True)
 
@@ -509,15 +529,19 @@ def process_cut(
     with multiprocessing.Pool(processes=n_processes) as pool:
         with tqdm.tqdm(total=len(tasks), desc="Cutting Audio", ncols=80) as pbar:
             for msg in pool.imap_unordered(_process_cut_single, tasks):
-                if msg.startswith("[ERROR]") or msg.startswith("[WARN]"):
-                    tqdm.tqdm.write(msg)
+                if msg.startswith("[ERROR]"):
+                    logger.error(msg)
+                elif msg.startswith("[WARN]"):
+                    logger.warning(msg)
+                else:
+                    logger.info(msg)
                 pbar.update()
 
-    print("[Cut] Completed cutting.")
+    logger.info("[Cut] Completed cutting.")
 
 
 # -------------------------------------------------
-# Remove Intro Segments (Optional)
+# Remove Intro Segments
 # -------------------------------------------------
 def remove_intro_segments(input_dir):
     """
@@ -533,24 +557,8 @@ def remove_intro_segments(input_dir):
                     os.remove(file_path)
                     removed_count += 1
                 except Exception as e:
-                    print(f"Error removing {file_path}: {e}")
-    print(f"[RemoveIntro] Removed {removed_count} intro segments.")
-
-
-# -------------------------------------------------
-# GCS Upload
-# -------------------------------------------------
-def upload_to_gcs_with_gsutil(local_dir, bucket_name, remote_prefix):
-    gsutil_command = [
-        'gsutil', '-m', 'cp', '-r',
-        os.path.join(local_dir, '*'),
-        f'gs://{bucket_name}/{remote_prefix}/'
-    ]
-    try:
-        subprocess.run(gsutil_command, check=True)
-        print(f"[GCS Upload] Successfully uploaded {local_dir} to gs://{bucket_name}/{remote_prefix}/")
-    except subprocess.CalledProcessError as e:
-        print(f"[GCS Upload] Error occurred: {e}")
+                    logger.error(f"Error removing {file_path}: {e}")
+    logger.info(f"[RemoveIntro] Removed {removed_count} intro segments.")
 
 
 # -------------------------------------------------
@@ -577,7 +585,7 @@ def calculate_total_audio_hours(dir_path, ext=".mp3", max_workers=8):
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = [executor.submit(get_length, f) for f in audio_files]
-        for future in tqdm.tqdm(as_completed(futures), total=len(futures), desc="Calc Length", ncols=80):
+        for future in tqdm.tqdm(as_completed(futures), total=len(audio_files), desc="Calc Length", ncols=80):
             total_secs += future.result()
 
     return total_secs / 3600.0
@@ -591,10 +599,9 @@ def generate_segments_metadata(cut_dir, output_csv, ext=".mp3", max_workers=8):
     Generate metadata CSV for all cut segments.
     
     CSV columns:
-    - segment_path: Relative path from cut_dir
-    - original_file: Original audio filename
-    - segment_index: Index of the segment (0000, 0001, etc)
-    - duration_sec: Audio duration in seconds
+    - original_file: 원본 파일 이름
+    - segment_index: 잘린 세그먼트의 인덱스
+    - duration_sec: 잘린 세그먼트 길이(초)
     """
     metadata = []
     cut_dir = pathlib.Path(cut_dir)
@@ -602,14 +609,11 @@ def generate_segments_metadata(cut_dir, output_csv, ext=".mp3", max_workers=8):
     def get_audio_info(fpath):
         try:
             info = sf.info(fpath)
-            stat = pathlib.Path(fpath).stat()
-            created_at = datetime.fromtimestamp(stat.st_ctime).isoformat()
-            
             return {
                 'duration_sec': info.duration,
             }
         except Exception as e:
-            print(f"Error reading {fpath}: {e}")
+            logger.error(f"Error reading {fpath}: {e}")
             return None
             
     # Collect all segment files
@@ -618,7 +622,7 @@ def generate_segments_metadata(cut_dir, output_csv, ext=".mp3", max_workers=8):
         if file_path.is_file():
             segment_files.append(file_path)
     
-    print(f"\n[Metadata] Processing {len(segment_files)} segments...")
+    logger.info(f"\n[Metadata] Processing {len(segment_files)} segments...")
     
     # Process files in parallel
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -649,147 +653,22 @@ def generate_segments_metadata(cut_dir, output_csv, ext=".mp3", max_workers=8):
     if metadata:
         df = pd.DataFrame(metadata)
         df.to_csv(output_csv, index=False)
-        print(f"[Metadata] Saved to {output_csv}")
+        logger.info(f"[Metadata] Saved to {output_csv}")
         
         # Print summary
         total_duration = df['duration_sec'].sum() / 3600  # hours
-        print(f"\n[Metadata Summary]")
-        print(f"Total segments: {len(df):,}")
-        print(f"Total duration: {total_duration:.2f} hours")
-        print(f"Average duration: {df['duration_sec'].mean():.2f} seconds")
+        logger.info(f"\n[Metadata Summary]")
+        logger.info(f"Total segments: {len(df):,}")
+        logger.info(f"Total duration: {total_duration:.2f} hours")
+        logger.info(f"Average duration: {df['duration_sec'].mean():.2f} seconds")
         
     else:
-        print("[Metadata] No valid segments found")
+        logger.info("[Metadata] No valid segments found")
 
 
 # -------------------------------------------------
-# 파이프라인 로직
+# 보조 유틸
 # -------------------------------------------------
-def run_pipeline(args):
-    stage_timer = StageTimer()
-    base_dir = pathlib.Path(args.base_dir)
-
-    # 주요 디렉토리
-    download_dir = base_dir / "downloads"   # 다운로드 원본 MP3
-    vad_dir      = base_dir / "vad"         # VAD JSON
-    cut_dir      = base_dir / "cut"         # 최종 잘린 MP3
-
-    # 파이프라인 실행할 단계 찾기
-    start_stage_idx = list(PIPELINE_STAGES.keys()).index(args.start_stage)
-    end_stage_idx   = list(PIPELINE_STAGES.keys()).index(args.end_stage)
-    stages_to_run   = list(PIPELINE_STAGES.keys())[start_stage_idx : end_stage_idx + 1]
-
-    # 필요한 디렉토리 생성
-    for stg in stages_to_run:
-        if stg == "download":
-            download_dir.mkdir(parents=True, exist_ok=True)
-        elif stg == "vad":
-            vad_dir.mkdir(parents=True, exist_ok=True)
-        elif stg == "cut":
-            cut_dir.mkdir(parents=True, exist_ok=True)
-
-    # 1) Download
-    if "download" in stages_to_run:
-        stage_timer.start("download")
-        download_urls(
-            urls_file=f"urls.txt",
-            output_dir=download_dir,
-            test_sample=args.test_sample,
-            n_threads=DEFAULT_THREADS_DOWNLOAD
-        )
-        stage_timer.end("download")
-        # 다운로드 직후 오디오 총 길이 출력
-        total_hours = calculate_total_audio_hours(download_dir, ext=args.format)
-        print(f"\n[Audio Length] After download = {total_hours:.2f} hours")
-
-    # 2) VAD
-    if "vad" in stages_to_run:
-        stage_timer.start("vad")
-        process_vad(
-            input_dir=download_dir,
-            output_dir=vad_dir,
-            sample_rate=16000,               # VAD는 16kHz 사용
-            min_speech_duration=args.min_speech_duration,
-            test_sample=args.test_sample,
-            n_processes=args.n_processes
-        )
-        stage_timer.end("vad")
-
-    # 3) Cut
-    if "cut" in stages_to_run:
-        stage_timer.start("cut")
-        process_cut(
-            vad_dir=vad_dir,
-            audio_dir=download_dir,
-            output_dir=cut_dir,
-            out_extension=".mp3",
-            min_len_sec=15,
-            max_len_sec=args.target_len_sec,
-            test_sample=args.test_sample,
-            n_processes=args.n_processes
-        )
-        stage_timer.end("cut")
-
-        # Add segment statistics after cutting
-        print("\n[Segment Statistics]")
-        avg_dur, min_dur, max_dur, count = measure_segment_stats(cut_dir, ext=".mp3")
-        print(f"  Total segments: {count:,}")
-        print(f"  Average duration: {avg_dur:.2f} seconds")
-        print(f"  Minimum duration: {min_dur:.2f} seconds")
-        print(f"  Maximum duration: {max_dur:.2f} seconds")
-        print(f"  Total duration: {(count * avg_dur / 3600):.2f} hours\n")
-        
-        # Generate metadata CSV
-        metadata_csv = cut_dir / "segments_metadata.csv"
-        generate_segments_metadata(cut_dir, metadata_csv)
-
-    # 4) Remove intro
-    if "intro" in stages_to_run:
-        stage_timer.start("intro")
-        remove_intro_segments(cut_dir)
-        stage_timer.end("intro")
-
-    # 최종 컷 후 오디오 길이
-    if end_stage_idx >= list(PIPELINE_STAGES.keys()).index("cut"):
-        final_hours = calculate_total_audio_hours(cut_dir, ext=".mp3")
-        print(f"\n[Audio Length] After cutting = {final_hours:.2f} hours")
-
-    stage_timer.report()
-    print(f"\n[Pipeline] Completed stages from {args.start_stage} to {args.end_stage} successfully.")
-
-
-# -------------------------------------------------
-# argparse
-# -------------------------------------------------
-def parse_args():
-    parser = argparse.ArgumentParser(description="Librivox End-to-End Pipeline (MP3 direct download)")
-
-    parser.add_argument("--base_dir", type=str, default=DEFAULT_BASE_DIR)
-    parser.add_argument("--language", type=str, default=DEFAULT_LANGUAGE)
-    parser.add_argument("--format", type=str, default=DEFAULT_FORMAT)
-    parser.add_argument("--sample_rate", type=int, default=DEFAULT_SAMPLE_RATE,
-                        help="Expected sample rate (normally 44100)")
-
-    parser.add_argument("--test_sample", type=int, default=None, help="For quick test: limit # of files")
-    parser.add_argument("--n_processes", type=int, default=DEFAULT_N_PROCESSES)
-    parser.add_argument("--min_speech_duration", type=float, default=DEFAULT_MIN_SPEECH_DURATION)
-    parser.add_argument("--target_len_sec", type=int, default=DEFAULT_TARGET_LEN_SEC,
-                        help="Max length for each cut segment")
-
-    # 파이프라인 제어
-    parser.add_argument("--start_stage", type=str, choices=list(PIPELINE_STAGES.keys()),
-                        help="Start from this pipeline stage")
-    parser.add_argument("--end_stage", type=str, choices=list(PIPELINE_STAGES.keys()),
-                        help="End at this pipeline stage")
-
-    args = parser.parse_args()
-
-    # 시작/종료 단계 검증
-    if list(PIPELINE_STAGES.keys()).index(args.start_stage) > list(PIPELINE_STAGES.keys()).index(args.end_stage):
-        parser.error("start_stage cannot come after end_stage")
-
-    return args
-
 def measure_segment_stats(dir_path, ext=".mp3", max_workers=8):
     """
     Measures audio segment statistics in dir_path:
@@ -832,6 +711,135 @@ def measure_segment_stats(dir_path, ext=".mp3", max_workers=8):
     max_dur = max(durations)
 
     return avg_dur, min_dur, max_dur, count
+
+
+# -------------------------------------------------
+# 파이프라인 메인 로직
+# -------------------------------------------------
+def run_pipeline(args):
+    stage_timer = StageTimer()
+    base_dir = pathlib.Path(args.base_dir)
+
+    # 주요 디렉토리
+    download_dir = base_dir / "downloads"   # 다운로드 원본 MP3
+    vad_dir      = base_dir / "vad"         # VAD JSON
+    cut_dir      = base_dir / "cut"         # 최종 잘린 MP3
+
+    # 파이프라인 실행할 단계 찾기
+    start_stage_idx = list(PIPELINE_STAGES.keys()).index(args.start_stage)
+    end_stage_idx   = list(PIPELINE_STAGES.keys()).index(args.end_stage)
+    stages_to_run   = list(PIPELINE_STAGES.keys())[start_stage_idx : end_stage_idx + 1]
+
+    # 필요한 디렉토리 생성
+    for stg in stages_to_run:
+        if stg == "download":
+            download_dir.mkdir(parents=True, exist_ok=True)
+        elif stg == "vad":
+            vad_dir.mkdir(parents=True, exist_ok=True)
+        elif stg == "cut":
+            cut_dir.mkdir(parents=True, exist_ok=True)
+
+    # 1) Download
+    if "download" in stages_to_run:
+        stage_timer.start("download")
+        download_urls(
+            urls_file=f"urls.txt",
+            output_dir=download_dir,
+            test_sample=args.test_sample,
+            n_threads=DEFAULT_THREADS_DOWNLOAD
+        )
+        stage_timer.end("download")
+        # 다운로드 직후 오디오 총 길이 출력
+        total_hours = calculate_total_audio_hours(download_dir, ext=args.format)
+        logger.info(f"\n[Audio Length] After download = {total_hours:.2f} hours")
+
+    # 2) VAD
+    if "vad" in stages_to_run:
+        stage_timer.start("vad")
+        process_vad(
+            input_dir=download_dir,
+            output_dir=vad_dir,
+            sample_rate=16000,               # VAD는 16kHz 사용
+            min_speech_duration=args.min_speech_duration,
+            test_sample=args.test_sample,
+            n_processes=args.n_processes
+        )
+        stage_timer.end("vad")
+
+    # 3) Cut
+    if "cut" in stages_to_run:
+        stage_timer.start("cut")
+        process_cut(
+            vad_dir=vad_dir,
+            audio_dir=download_dir,
+            output_dir=cut_dir,
+            out_extension=".mp3",
+            min_len_sec=15,
+            max_len_sec=args.target_len_sec,
+            test_sample=args.test_sample,
+            n_processes=args.n_processes
+        )
+        stage_timer.end("cut")
+
+        # Add segment statistics after cutting
+        logger.info("\n[Segment Statistics]")
+        avg_dur, min_dur, max_dur, count = measure_segment_stats(cut_dir, ext=".mp3")
+        logger.info(f"  Total segments: {count:,}")
+        logger.info(f"  Average duration: {avg_dur:.2f} seconds")
+        logger.info(f"  Minimum duration: {min_dur:.2f} seconds")
+        logger.info(f"  Maximum duration: {max_dur:.2f} seconds")
+        logger.info(f"  Total duration: {(count * avg_dur / 3600):.2f} hours\n")
+        
+        # Generate metadata CSV
+        metadata_csv = cut_dir / "segments_metadata.csv"
+        generate_segments_metadata(cut_dir, metadata_csv)
+
+    # 4) Remove intro
+    if "intro" in stages_to_run:
+        stage_timer.start("intro")
+        remove_intro_segments(cut_dir)
+        stage_timer.end("intro")
+
+    # 최종 컷 후 오디오 길이
+    if end_stage_idx >= list(PIPELINE_STAGES.keys()).index("cut"):
+        final_hours = calculate_total_audio_hours(cut_dir, ext=".mp3")
+        logger.info(f"\n[Audio Length] After cutting = {final_hours:.2f} hours")
+
+    stage_timer.report()
+    logger.info(f"\n[Pipeline] Completed stages from {args.start_stage} to {args.end_stage} successfully.")
+
+
+# -------------------------------------------------
+# argparse
+# -------------------------------------------------
+def parse_args():
+    parser = argparse.ArgumentParser(description="Librivox End-to-End Pipeline (MP3 direct download)")
+
+    parser.add_argument("--base_dir", type=str, default=DEFAULT_BASE_DIR)
+    parser.add_argument("--language", type=str, default=DEFAULT_LANGUAGE)
+    parser.add_argument("--format", type=str, default=DEFAULT_FORMAT)
+    parser.add_argument("--sample_rate", type=int, default=DEFAULT_SAMPLE_RATE,
+                        help="Expected sample rate (normally 44100)")
+
+    parser.add_argument("--test_sample", type=int, default=None, help="For quick test: limit # of files")
+    parser.add_argument("--n_processes", type=int, default=DEFAULT_N_PROCESSES)
+    parser.add_argument("--min_speech_duration", type=float, default=DEFAULT_MIN_SPEECH_DURATION)
+    parser.add_argument("--target_len_sec", type=int, default=DEFAULT_TARGET_LEN_SEC,
+                        help="Max length for each cut segment")
+
+    # 파이프라인 제어
+    parser.add_argument("--start_stage", type=str, choices=list(PIPELINE_STAGES.keys()),
+                        help="Start from this pipeline stage")
+    parser.add_argument("--end_stage", type=str, choices=list(PIPELINE_STAGES.keys()),
+                        help="End at this pipeline stage")
+
+    args = parser.parse_args()
+
+    # 시작/종료 단계 검증
+    if list(PIPELINE_STAGES.keys()).index(args.start_stage) > list(PIPELINE_STAGES.keys()).index(args.end_stage):
+        parser.error("start_stage cannot come after end_stage")
+
+    return args
 
 def main():
     args = parse_args()
