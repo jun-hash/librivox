@@ -1,0 +1,1061 @@
+2025-02-27 00:21:14 [INFO] [VAD] Loading model...
+2025-02-27 00:21:14 [INFO] [Download] Found 4633 files to download
+2025-02-27 00:35:11 [ERROR] MAIN: Pipeline failed: "Attempt to overwrite 'pipeline_stage' in LogRecord"
+2025-02-27 00:36:05 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:36:05 [INFO] Download: ==================== Starting Download ====================
+2025-02-27 00:36:05 [INFO] MAIN: [Download] 100 URLs to download.
+2025-02-27 00:37:56 [INFO] MAIN: [Download Summary] Success=100, Failed=0, Total=100
+2025-02-27 00:42:02 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:42:03 [INFO] Download: ==================== Starting Download ====================
+2025-02-27 00:42:03 [INFO] MAIN: [Download] 100 URLs to download.
+2025-02-27 00:42:03 [INFO] MAIN: [Download Summary] Success=100, Failed=0, Total=100
+2025-02-27 00:42:11 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:42:11 [INFO] Download: ==================== Starting Download ====================
+2025-02-27 00:42:11 [INFO] MAIN: [Download] 100 URLs to download.
+2025-02-27 00:42:11 [INFO] MAIN: [Download Summary] Success=100, Failed=0, Total=100
+2025-02-27 00:42:11 [INFO] MAIN: Total audio length: 13.18 hours
+2025-02-27 00:42:11 [INFO] Download: ==================== Completed Download ====================
+2025-02-27 00:42:11 [INFO] VAD: ==================== Starting VAD ====================
+2025-02-27 00:42:11 [INFO] MAIN: [VAD] Found 102 audio files.
+2025-02-27 00:42:11 [INFO] MAIN: [VAD] Processing 102 files (others skipped).
+2025-02-27 00:42:13 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:42:13 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:42:13 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:42:13 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:42:13 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:42:13 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:42:13 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:42:13 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:42:13 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:42:13 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:42:13 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:42:15 [INFO] MAIN: [VAD] Processed file: talk_benet_dl.mp3
+2025-02-27 00:42:15 [INFO] MAIN: [VAD] Processed file: nationalspirit1_28_various.mp3
+2025-02-27 00:42:15 [INFO] MAIN: [VAD] Processed file: nationalspirit1_51_various.mp3
+2025-02-27 00:42:15 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_bwc.mp3
+2025-02-27 00:42:15 [INFO] MAIN: [VAD] Processed file: nationalspirit1_21_various.mp3
+2025-02-27 00:42:15 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_aps.mp3
+2025-02-27 00:42:15 [INFO] MAIN: [VAD] Processed file: nationalspirit1_13_various.mp3
+2025-02-27 00:42:15 [INFO] MAIN: [VAD] Processed file: nationalspirit1_06_various.mp3
+2025-02-27 00:42:15 [INFO] MAIN: [VAD] Processed file: nationalspirit1_58_various.mp3
+2025-02-27 00:42:16 [INFO] MAIN: [VAD] Processed file: nationalspirit1_03_various.mp3
+2025-02-27 00:42:16 [INFO] MAIN: [VAD] Processed file: talk_benet_rr.mp3
+2025-02-27 00:42:16 [INFO] MAIN: [VAD] Processed file: nationalspirit1_34_various.mp3
+2025-02-27 00:42:16 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_pfs.mp3
+2025-02-27 00:42:16 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_mm.mp3
+2025-02-27 00:42:16 [INFO] MAIN: [VAD] Processed file: nationalspirit1_31_various.mp3
+2025-02-27 00:42:17 [INFO] MAIN: [VAD] Processed file: talk_benet_ks.mp3
+2025-02-27 00:42:17 [INFO] MAIN: [VAD] Processed file: nationalspirit1_44_various.mp3
+2025-02-27 00:42:17 [INFO] MAIN: [VAD] Processed file: nationalspirit1_54_various.mp3
+2025-02-27 00:42:17 [INFO] MAIN: [VAD] Processed file: nationalspirit1_41_various.mp3
+2025-02-27 00:42:18 [INFO] MAIN: [VAD] Processed file: talk_benet_syk.mp3
+2025-02-27 00:42:18 [INFO] MAIN: [VAD] Processed file: nationalspirit1_16_various.mp3
+2025-02-27 00:42:18 [INFO] MAIN: [VAD] Processed file: nationalspirit1_48_various.mp3
+2025-02-27 00:42:18 [INFO] MAIN: [VAD] Processed file: talk_benet_lcw.mp3
+2025-02-27 00:42:19 [INFO] MAIN: [VAD] Processed file: talk_benet_lah.mp3
+2025-02-27 00:42:19 [INFO] MAIN: [VAD] Processed file: nationalspirit1_09_various.mp3
+2025-02-27 00:42:19 [INFO] MAIN: [VAD] Processed file: nationalspirit1_38_various.mp3
+2025-02-27 00:42:20 [INFO] MAIN: [VAD] Processed file: nationalspirit1_32_various.mp3
+2025-02-27 00:42:21 [INFO] MAIN: [VAD] Processed file: nationalspirit1_57_various.mp3
+2025-02-27 00:42:21 [INFO] MAIN: [VAD] Processed file: nationalspirit1_42_various.mp3
+2025-02-27 00:42:21 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_gll.mp3
+2025-02-27 00:42:23 [INFO] MAIN: [VAD] Processed file: wonderfulhistoryofpeterschlemihl_07_vonchamisso.mp3
+2025-02-27 00:42:23 [INFO] MAIN: [VAD] Processed file: nationalspirit1_19_various.mp3
+2025-02-27 00:42:24 [INFO] MAIN: [VAD] Processed file: nationalspirit1_37_various.mp3
+2025-02-27 00:42:25 [INFO] MAIN: [VAD] Processed file: nationalspirit1_47_various.mp3
+2025-02-27 00:42:25 [INFO] MAIN: [VAD] Processed file: someonetowatchoverme_08_gold.mp3
+2025-02-27 00:42:25 [INFO] MAIN: [VAD] Processed file: talk_benet_slm.mp3
+2025-02-27 00:42:26 [INFO] MAIN: [VAD] Processed file: nationalspirit1_05_various.mp3
+2025-02-27 00:42:26 [INFO] MAIN: [VAD] Processed file: talk_benet_bk.mp3
+2025-02-27 00:42:26 [INFO] MAIN: [VAD] Processed file: talk_benet_zm.mp3
+2025-02-27 00:42:26 [INFO] MAIN: [VAD] Processed file: nationalspirit1_10_various.mp3
+2025-02-27 00:42:27 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_map.mp3
+2025-02-27 00:42:27 [INFO] MAIN: [VAD] Processed file: nationalspirit1_52_various.mp3
+2025-02-27 00:42:27 [INFO] MAIN: [VAD] Processed file: nationalspirit1_22_various.mp3
+2025-02-27 00:42:28 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_maf.mp3
+2025-02-27 00:42:29 [INFO] MAIN: [VAD] Processed file: nationalspirit1_17_various.mp3
+2025-02-27 00:42:29 [INFO] MAIN: [VAD] Processed file: goodofmarriage_03_augustine.mp3
+2025-02-27 00:42:30 [INFO] MAIN: [VAD] Processed file: talk_benet_aps.mp3
+2025-02-27 00:42:31 [INFO] MAIN: [VAD] Processed file: nationalspirit1_39_various.mp3
+2025-02-27 00:42:33 [INFO] MAIN: [VAD] Processed file: someonetowatchoverme_05_gold.mp3
+2025-02-27 00:42:33 [INFO] MAIN: [VAD] Processed file: visittoparisin1814_06_scott.mp3
+2025-02-27 00:42:33 [INFO] MAIN: [VAD] Processed file: talk_benet_bwc.mp3
+2025-02-27 00:42:34 [INFO] MAIN: [VAD] Processed file: nationalspirit1_49_various.mp3
+2025-02-27 00:42:34 [INFO] MAIN: [VAD] Processed file: nationalspirit1_55_various.mp3
+2025-02-27 00:42:34 [INFO] MAIN: [VAD] Processed file: nationalspirit1_25_various.mp3
+2025-02-27 00:42:36 [INFO] MAIN: [VAD] Processed file: nationalspirit1_02_various.mp3
+2025-02-27 00:42:36 [INFO] MAIN: [VAD] Processed file: nationalspirit1_30_various.mp3
+2025-02-27 00:42:36 [INFO] MAIN: [VAD] Processed file: nationalspirit1_40_various.mp3
+2025-02-27 00:42:37 [INFO] MAIN: [VAD] Processed file: talk_benet_bc.mp3
+2025-02-27 00:42:37 [INFO] MAIN: [VAD] Processed file: johnhancock_02_sears.mp3
+2025-02-27 00:42:37 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_rr.mp3
+2025-02-27 00:42:37 [INFO] MAIN: [VAD] Processed file: nationalspirit1_35_various.mp3
+2025-02-27 00:42:37 [INFO] MAIN: [VAD] Processed file: talk_benet_pfs.mp3
+2025-02-27 00:42:38 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_dl.mp3
+2025-02-27 00:42:38 [INFO] MAIN: [VAD] Processed file: talk_benet_mm.mp3
+2025-02-27 00:42:38 [INFO] MAIN: [VAD] Processed file: nationalspirit1_29_various.mp3
+2025-02-27 00:42:39 [INFO] MAIN: [VAD] Processed file: visittoparisin1814_07_scott.mp3
+2025-02-27 00:42:39 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_js.mp3
+2025-02-27 00:42:39 [INFO] MAIN: [VAD] Processed file: nationalspirit1_50_various.mp3
+2025-02-27 00:42:40 [INFO] MAIN: [VAD] Processed file: nationalspirit1_23_various.mp3
+2025-02-27 00:42:40 [INFO] MAIN: [VAD] Processed file: nationalspirit1_20_various.mp3
+2025-02-27 00:42:40 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_sp.mp3
+2025-02-27 00:42:40 [INFO] MAIN: [VAD] Processed file: nationalspirit1_53_various.mp3
+2025-02-27 00:42:41 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_lcw.mp3
+2025-02-27 00:42:41 [INFO] MAIN: [VAD] Processed file: talk_benet_awb.mp3
+2025-02-27 00:42:41 [INFO] MAIN: [VAD] Processed file: nationalspirit1_11_various.mp3
+2025-02-27 00:42:42 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_ikl.mp3
+2025-02-27 00:42:42 [INFO] MAIN: [VAD] Processed file: nationalspirit1_04_various.mp3
+2025-02-27 00:42:43 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_bk.mp3
+2025-02-27 00:42:46 [INFO] MAIN: [VAD] Processed file: nationalspirit1_18_various.mp3
+2025-02-27 00:42:46 [INFO] MAIN: [VAD] Processed file: nationalspirit1_36_various.mp3
+2025-02-27 00:42:46 [INFO] MAIN: [VAD] Processed file: talk_benet_pr.mp3
+2025-02-27 00:42:48 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_ls.mp3
+2025-02-27 00:42:48 [INFO] MAIN: [VAD] Processed file: characters_02_ferrero.mp3
+2025-02-27 00:42:49 [INFO] MAIN: [VAD] Processed file: nationalspirit1_46_various.mp3
+2025-02-27 00:42:49 [INFO] MAIN: [VAD] Processed file: nationalspirit1_43_various.mp3
+2025-02-27 00:42:49 [INFO] MAIN: [VAD] Processed file: visittoparisin1814_01_scott.mp3
+2025-02-27 00:42:50 [INFO] MAIN: [VAD] Processed file: nationalspirit1_33_various.mp3
+2025-02-27 00:42:50 [INFO] MAIN: [VAD] Processed file: visittoparisin1814_04_scott.mp3
+2025-02-27 00:42:50 [INFO] MAIN: [VAD] Processed file: snowstorm_emerson_ch.mp3
+2025-02-27 00:42:51 [INFO] MAIN: [VAD] Processed file: nationalspirit1_08_various.mp3
+2025-02-27 00:42:51 [INFO] MAIN: [VAD] Processed file: nationalspirit1_56_various.mp3
+2025-02-27 00:42:51 [INFO] MAIN: [VAD] Processed file: characters_01_ferrero.mp3
+2025-02-27 00:42:52 [INFO] MAIN: [VAD] Processed file: nationalspirit1_14_various.mp3
+2025-02-27 00:42:53 [INFO] MAIN: [VAD] Processed file: goodofmarriage_01_augustine.mp3
+2025-02-27 00:42:53 [INFO] MAIN: [VAD] Processed file: visittoparisin1814_02_scott.mp3
+2025-02-27 00:42:56 [INFO] MAIN: [VAD] Processed file: characters_03_ferrero.mp3
+2025-02-27 00:42:56 [INFO] MAIN: [VAD] Processed file: visittoparisin1814_05_scott.mp3
+2025-02-27 00:42:59 [INFO] MAIN: [VAD] Processed file: characters_04_ferrero.mp3
+2025-02-27 00:42:59 [INFO] MAIN: [VAD] Processed file: goodofmarriage_02_augustine.mp3
+2025-02-27 00:42:59 [INFO] MAIN: [VAD] Processed file: someonetowatchoverme_06_gold.mp3
+2025-02-27 00:43:01 [INFO] MAIN: [VAD] Processed file: someonetowatchoverme_07_gold.mp3
+2025-02-27 00:43:03 [INFO] MAIN: [VAD] Processed file: visittoparisin1814_03_scott.mp3
+2025-02-27 00:43:03 [INFO] MAIN: [VAD] Processing completed.
+2025-02-27 00:43:03 [INFO] VAD: ==================== Completed VAD ====================
+2025-02-27 00:43:03 [INFO] MAIN: [Cut] Found 102 VAD json files.
+2025-02-27 00:43:05 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:43:05 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:43:05 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:43:05 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:43:05 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:43:05 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:43:05 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:43:05 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:43:05 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:43:05 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:43:05 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:43:05 [INFO] MAIN: [OK] data/downloads/nationalspirit1_03_various.mp3 => 2 segments
+2025-02-27 00:43:05 [INFO] MAIN: [OK] data/downloads/nationalspirit1_51_various.mp3 => 2 segments
+2025-02-27 00:43:05 [INFO] MAIN: [OK] data/downloads/nationalspirit1_56_various.mp3 => 4 segments
+2025-02-27 00:43:05 [INFO] MAIN: [OK] data/downloads/nationalspirit1_11_various.mp3 => 5 segments
+2025-02-27 00:43:05 [INFO] MAIN: [OK] data/downloads/nationalspirit1_43_various.mp3 => 5 segments
+2025-02-27 00:43:05 [INFO] MAIN: [OK] data/downloads/nationalspirit1_04_various.mp3 => 4 segments
+2025-02-27 00:43:05 [INFO] MAIN: [OK] data/downloads/nationalspirit1_35_various.mp3 => 6 segments
+2025-02-27 00:43:05 [INFO] MAIN: [OK] data/downloads/nationalspirit1_16_various.mp3 => 6 segments
+2025-02-27 00:43:05 [INFO] MAIN: [OK] data/downloads/nationalspirit1_20_various.mp3 => 6 segments
+2025-02-27 00:43:05 [INFO] MAIN: [OK] data/downloads/nationalspirit1_44_various.mp3 => 8 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_10_various.mp3 => 3 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_32_various.mp3 => 4 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/talk_benet_lah.mp3 => 2 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_dl.mp3 => 5 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_02_various.mp3 => 5 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_57_various.mp3 => 7 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_42_various.mp3 => 7 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_05_various.mp3 => 3 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_17_various.mp3 => 3 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/talk_benet_mm.mp3 => 2 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_50_various.mp3 => 4 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_21_various.mp3 => 5 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_34_various.mp3 => 3 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_33_various.mp3 => 5 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/talk_benet_awb.mp3 => 2 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/talk_benet_rr.mp3 => 3 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_39_various.mp3 => 4 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_lcw.mp3 => 4 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/talk_benet_bc.mp3 => 2 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/talk_benet_pr.mp3 => 3 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/talk_benet_syk.mp3 => 3 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_bk.mp3 => 4 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_08_various.mp3 => 5 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_48_various.mp3 => 6 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_sp.mp3 => 3 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_maf.mp3 => 4 segments
+2025-02-27 00:43:06 [INFO] MAIN: [OK] data/downloads/talk_benet_ks.mp3 => 2 segments
+2025-02-27 00:43:07 [INFO] MAIN: [OK] data/downloads/nationalspirit1_38_various.mp3 => 7 segments
+2025-02-27 00:43:07 [INFO] MAIN: [OK] data/downloads/talk_benet_lcw.mp3 => 2 segments
+2025-02-27 00:43:07 [INFO] MAIN: [OK] data/downloads/nationalspirit1_49_various.mp3 => 7 segments
+2025-02-27 00:43:11 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_08_gold.mp3 => 26 segments
+2025-02-27 00:43:11 [INFO] MAIN: [OK] data/downloads/nationalspirit1_09_various.mp3 => 6 segments
+2025-02-27 00:43:20 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_05_gold.mp3 => 41 segments
+2025-02-27 00:43:20 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_aps.mp3 => 4 segments
+2025-02-27 00:43:21 [INFO] MAIN: [OK] data/downloads/nationalspirit1_28_various.mp3 => 2 segments
+2025-02-27 00:43:21 [INFO] MAIN: [OK] data/downloads/johnhancock_02_sears.mp3 => 39 segments
+2025-02-27 00:43:21 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_ls.mp3 => 4 segments
+2025-02-27 00:43:25 [INFO] MAIN: [OK] data/downloads/goodofmarriage_01_augustine.mp3 => 49 segments
+2025-02-27 00:43:25 [INFO] MAIN: [OK] data/downloads/goodofmarriage_03_augustine.mp3 => 44 segments
+2025-02-27 00:43:25 [INFO] MAIN: [OK] data/downloads/talk_benet_dl.mp3 => 3 segments
+2025-02-27 00:43:25 [INFO] MAIN: [OK] data/downloads/nationalspirit1_19_various.mp3 => 4 segments
+2025-02-27 00:43:26 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_map.mp3 => 3 segments
+2025-02-27 00:43:26 [INFO] MAIN: [OK] data/downloads/nationalspirit1_29_various.mp3 => 3 segments
+2025-02-27 00:43:31 [INFO] MAIN: [OK] data/downloads/goodofmarriage_02_augustine.mp3 => 50 segments
+2025-02-27 00:43:31 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_ikl.mp3 => 3 segments
+2025-02-27 00:43:31 [INFO] MAIN: [OK] data/downloads/talk_benet_aps.mp3 => 2 segments
+2025-02-27 00:43:31 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_mm.mp3 => 4 segments
+2025-02-27 00:43:31 [INFO] MAIN: [OK] data/downloads/nationalspirit1_58_various.mp3 => 7 segments
+2025-02-27 00:43:31 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_js.mp3 => 5 segments
+2025-02-27 00:43:33 [INFO] MAIN: [OK] data/downloads/nationalspirit1_18_various.mp3 => 16 segments
+2025-02-27 00:43:33 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_rr.mp3 => 4 segments
+2025-02-27 00:43:34 [INFO] MAIN: [OK] data/downloads/talk_benet_bwc.mp3 => 2 segments
+2025-02-27 00:43:34 [INFO] MAIN: [OK] data/downloads/nationalspirit1_40_various.mp3 => 6 segments
+2025-02-27 00:43:34 [INFO] MAIN: [OK] data/downloads/talk_benet_zm.mp3 => 2 segments
+2025-02-27 00:43:35 [INFO] MAIN: [OK] data/downloads/nationalspirit1_47_various.mp3 => 9 segments
+2025-02-27 00:43:35 [INFO] MAIN: [OK] data/downloads/nationalspirit1_52_various.mp3 => 4 segments
+2025-02-27 00:43:35 [INFO] MAIN: [OK] data/downloads/nationalspirit1_55_various.mp3 => 2 segments
+2025-02-27 00:43:36 [INFO] MAIN: [OK] data/downloads/nationalspirit1_36_various.mp3 => 11 segments
+2025-02-27 00:43:36 [INFO] MAIN: [OK] data/downloads/nationalspirit1_31_various.mp3 => 6 segments
+2025-02-27 00:43:41 [INFO] MAIN: [OK] data/downloads/wonderfulhistoryofpeterschlemihl_07_vonchamisso.mp3 => 24 segments
+2025-02-27 00:43:41 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_pfs.mp3 => 4 segments
+2025-02-27 00:43:45 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_07_scott.mp3 => 59 segments
+2025-02-27 00:43:45 [INFO] MAIN: [OK] data/downloads/talk_benet_bk.mp3 => 2 segments
+2025-02-27 00:43:45 [INFO] MAIN: [OK] data/downloads/nationalspirit1_23_various.mp3 => 4 segments
+2025-02-27 00:43:45 [INFO] MAIN: [OK] data/downloads/talk_benet_slm.mp3 => 1 segments
+2025-02-27 00:43:46 [INFO] MAIN: [OK] data/downloads/nationalspirit1_54_various.mp3 => 5 segments
+2025-02-27 00:43:46 [INFO] MAIN: [OK] data/downloads/talk_benet_pfs.mp3 => 2 segments
+2025-02-27 00:43:46 [INFO] MAIN: [OK] data/downloads/nationalspirit1_53_various.mp3 => 3 segments
+2025-02-27 00:43:46 [INFO] MAIN: [OK] data/downloads/nationalspirit1_06_various.mp3 => 5 segments
+2025-02-27 00:43:46 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_05_scott.mp3 => 69 segments
+2025-02-27 00:43:46 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_gll.mp3 => 5 segments
+2025-02-27 00:43:46 [INFO] MAIN: [OK] data/downloads/nationalspirit1_13_various.mp3 => 4 segments
+2025-02-27 00:43:47 [INFO] MAIN: [OK] data/downloads/nationalspirit1_46_various.mp3 => 9 segments
+2025-02-27 00:43:49 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_02_scott.mp3 => 66 segments
+2025-02-27 00:43:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_41_various.mp3 => 7 segments
+2025-02-27 00:43:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_14_various.mp3 => 3 segments
+2025-02-27 00:43:50 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_ch.mp3 => 3 segments
+2025-02-27 00:43:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_22_various.mp3 => 2 segments
+2025-02-27 00:43:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_25_various.mp3 => 2 segments
+2025-02-27 00:43:50 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_bwc.mp3 => 3 segments
+2025-02-27 00:43:51 [INFO] MAIN: [OK] data/downloads/nationalspirit1_30_various.mp3 => 5 segments
+2025-02-27 00:43:51 [INFO] MAIN: [OK] data/downloads/nationalspirit1_37_various.mp3 => 3 segments
+2025-02-27 00:43:54 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_07_gold.mp3 => 55 segments
+2025-02-27 00:44:02 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_06_gold.mp3 => 43 segments
+2025-02-27 00:44:03 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_04_scott.mp3 => 71 segments
+2025-02-27 00:44:07 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_06_scott.mp3 => 57 segments
+2025-02-27 00:44:17 [INFO] MAIN: [OK] data/downloads/characters_02_ferrero.mp3 => 91 segments
+2025-02-27 00:44:18 [INFO] MAIN: [OK] data/downloads/characters_03_ferrero.mp3 => 93 segments
+2025-02-27 00:44:21 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_03_scott.mp3 => 73 segments
+2025-02-27 00:44:27 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_01_scott.mp3 => 96 segments
+2025-02-27 00:44:34 [INFO] MAIN: [OK] data/downloads/characters_01_ferrero.mp3 => 105 segments
+2025-02-27 00:44:36 [INFO] MAIN: [OK] data/downloads/characters_04_ferrero.mp3 => 120 segments
+2025-02-27 00:44:36 [INFO] MAIN: [Cut] Completed cutting.
+2025-02-27 00:44:36 [INFO] MAIN: 
+[Segment Statistics]
+2025-02-27 00:46:44 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:46:45 [INFO] Download: ==================== Starting Download ====================
+2025-02-27 00:46:45 [INFO] MAIN: [Download] 100 URLs to download.
+2025-02-27 00:46:45 [INFO] MAIN: [Download Summary] Success=100, Failed=0, Total=100
+2025-02-27 00:46:45 [INFO] MAIN: Total audio length: 13.18 hours
+2025-02-27 00:46:45 [INFO] Download: ==================== Completed Download ====================
+2025-02-27 00:46:45 [INFO] VAD: ==================== Starting VAD ====================
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Found 102 audio files.
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_bwc.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_51_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_21_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: goodofmarriage_03_augustine.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_06_scott.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_13_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_aps.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_06_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_dl.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_28_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_58_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_44_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_34_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_mm.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_03_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_pfs.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_31_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_rr.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_41_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: wonderfulhistoryofpeterschlemihl_07_vonchamisso.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_54_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: someonetowatchoverme_08_gold.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_16_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: characters_02_ferrero.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_ks.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_48_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_38_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_syk.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: characters_01_ferrero.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_09_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_lcw.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_lah.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: someonetowatchoverme_05_gold.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_07_scott.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_57_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_32_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_42_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_gll.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: johnhancock_02_sears.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_19_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_47_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_01_scott.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_37_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_05_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_slm.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_bk.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_zm.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_10_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_map.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: characters_04_ferrero.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_52_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_22_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_maf.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: characters_03_ferrero.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_17_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_04_scott.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_aps.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_39_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_49_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_bwc.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_55_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_25_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_40_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_30_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_02_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_rr.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_35_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_bc.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_dl.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_pfs.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_02_scott.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_mm.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_29_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_js.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_20_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_50_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_sp.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_23_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_53_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_lcw.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_05_scott.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_11_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_awb.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: goodofmarriage_01_augustine.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_ikl.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_04_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_18_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_bk.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_36_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_46_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_pr.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_ls.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: goodofmarriage_02_augustine.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_43_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_33_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_03_scott.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_08_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_ch.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_56_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: someonetowatchoverme_07_gold.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: someonetowatchoverme_06_gold.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_14_various.mp3
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Processing 0 files (others skipped).
+2025-02-27 00:46:45 [INFO] MAIN: [VAD] Processing completed.
+2025-02-27 00:46:45 [INFO] VAD: ==================== Completed VAD ====================
+2025-02-27 00:46:45 [INFO] MAIN: [Cut] Found 102 VAD json files.
+2025-02-27 00:46:49 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:46:49 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:46:49 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:46:49 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:46:49 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:46:49 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:46:49 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:46:49 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:46:49 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:46:49 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:46:49 [INFO] MAIN: [OK] data/downloads/nationalspirit1_51_various.mp3 => 2 segments
+2025-02-27 00:46:49 [INFO] MAIN: [OK] data/downloads/nationalspirit1_04_various.mp3 => 4 segments
+2025-02-27 00:46:49 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:46:49 [INFO] MAIN: [OK] data/downloads/nationalspirit1_03_various.mp3 => 2 segments
+2025-02-27 00:46:49 [INFO] MAIN: [OK] data/downloads/nationalspirit1_56_various.mp3 => 4 segments
+2025-02-27 00:46:49 [INFO] MAIN: [OK] data/downloads/nationalspirit1_11_various.mp3 => 5 segments
+2025-02-27 00:46:49 [INFO] MAIN: [OK] data/downloads/nationalspirit1_16_various.mp3 => 6 segments
+2025-02-27 00:46:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_43_various.mp3 => 5 segments
+2025-02-27 00:46:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_32_various.mp3 => 4 segments
+2025-02-27 00:46:50 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_dl.mp3 => 5 segments
+2025-02-27 00:46:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_20_various.mp3 => 6 segments
+2025-02-27 00:46:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_35_various.mp3 => 6 segments
+2025-02-27 00:46:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_10_various.mp3 => 3 segments
+2025-02-27 00:46:50 [INFO] MAIN: [OK] data/downloads/talk_benet_lah.mp3 => 2 segments
+2025-02-27 00:46:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_17_various.mp3 => 3 segments
+2025-02-27 00:46:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_02_various.mp3 => 5 segments
+2025-02-27 00:46:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_42_various.mp3 => 7 segments
+2025-02-27 00:46:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_05_various.mp3 => 3 segments
+2025-02-27 00:46:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_50_various.mp3 => 4 segments
+2025-02-27 00:46:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_44_various.mp3 => 8 segments
+2025-02-27 00:46:51 [INFO] MAIN: [OK] data/downloads/talk_benet_mm.mp3 => 2 segments
+2025-02-27 00:46:51 [INFO] MAIN: [OK] data/downloads/nationalspirit1_21_various.mp3 => 5 segments
+2025-02-27 00:46:51 [INFO] MAIN: [OK] data/downloads/nationalspirit1_33_various.mp3 => 5 segments
+2025-02-27 00:46:51 [INFO] MAIN: [OK] data/downloads/nationalspirit1_57_various.mp3 => 7 segments
+2025-02-27 00:46:51 [INFO] MAIN: [OK] data/downloads/nationalspirit1_34_various.mp3 => 3 segments
+2025-02-27 00:46:51 [INFO] MAIN: [OK] data/downloads/nationalspirit1_39_various.mp3 => 4 segments
+2025-02-27 00:46:51 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_lcw.mp3 => 4 segments
+2025-02-27 00:46:51 [INFO] MAIN: [OK] data/downloads/talk_benet_bc.mp3 => 2 segments
+2025-02-27 00:46:51 [INFO] MAIN: [OK] data/downloads/talk_benet_awb.mp3 => 2 segments
+2025-02-27 00:46:51 [INFO] MAIN: [OK] data/downloads/talk_benet_rr.mp3 => 3 segments
+2025-02-27 00:46:51 [INFO] MAIN: [OK] data/downloads/talk_benet_syk.mp3 => 3 segments
+2025-02-27 00:46:51 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_bk.mp3 => 4 segments
+2025-02-27 00:46:51 [INFO] MAIN: [OK] data/downloads/talk_benet_pr.mp3 => 3 segments
+2025-02-27 00:46:52 [INFO] MAIN: [OK] data/downloads/nationalspirit1_08_various.mp3 => 5 segments
+2025-02-27 00:46:52 [INFO] MAIN: [OK] data/downloads/nationalspirit1_48_various.mp3 => 6 segments
+2025-02-27 00:46:52 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_sp.mp3 => 3 segments
+2025-02-27 00:46:52 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_maf.mp3 => 4 segments
+2025-02-27 00:46:52 [INFO] MAIN: [OK] data/downloads/talk_benet_ks.mp3 => 2 segments
+2025-02-27 00:46:52 [INFO] MAIN: [OK] data/downloads/nationalspirit1_38_various.mp3 => 7 segments
+2025-02-27 00:46:52 [INFO] MAIN: [OK] data/downloads/nationalspirit1_49_various.mp3 => 7 segments
+2025-02-27 00:46:53 [INFO] MAIN: [OK] data/downloads/talk_benet_lcw.mp3 => 2 segments
+2025-02-27 00:46:58 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_08_gold.mp3 => 26 segments
+2025-02-27 00:46:58 [INFO] MAIN: [OK] data/downloads/nationalspirit1_09_various.mp3 => 6 segments
+2025-02-27 00:47:12 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_05_gold.mp3 => 41 segments
+2025-02-27 00:47:12 [INFO] MAIN: [OK] data/downloads/johnhancock_02_sears.mp3 => 39 segments
+2025-02-27 00:47:13 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_aps.mp3 => 4 segments
+2025-02-27 00:47:13 [INFO] MAIN: [OK] data/downloads/nationalspirit1_28_various.mp3 => 2 segments
+2025-02-27 00:47:14 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_ls.mp3 => 4 segments
+2025-02-27 00:47:19 [INFO] MAIN: [OK] data/downloads/goodofmarriage_03_augustine.mp3 => 44 segments
+2025-02-27 00:47:19 [INFO] MAIN: [OK] data/downloads/talk_benet_dl.mp3 => 3 segments
+2025-02-27 00:47:19 [INFO] MAIN: [OK] data/downloads/nationalspirit1_19_various.mp3 => 4 segments
+2025-02-27 00:47:20 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_map.mp3 => 3 segments
+2025-02-27 00:47:23 [INFO] MAIN: [OK] data/downloads/goodofmarriage_01_augustine.mp3 => 49 segments
+2025-02-27 00:47:23 [INFO] MAIN: [OK] data/downloads/nationalspirit1_29_various.mp3 => 3 segments
+2025-02-27 00:47:26 [INFO] MAIN: [OK] data/downloads/goodofmarriage_02_augustine.mp3 => 50 segments
+2025-02-27 00:47:26 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_ikl.mp3 => 3 segments
+2025-02-27 00:47:27 [INFO] MAIN: [OK] data/downloads/talk_benet_aps.mp3 => 2 segments
+2025-02-27 00:47:27 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_mm.mp3 => 4 segments
+2025-02-27 00:47:28 [INFO] MAIN: [OK] data/downloads/nationalspirit1_58_various.mp3 => 7 segments
+2025-02-27 00:47:28 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_js.mp3 => 5 segments
+2025-02-27 00:47:32 [INFO] MAIN: [OK] data/downloads/nationalspirit1_18_various.mp3 => 16 segments
+2025-02-27 00:47:32 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_rr.mp3 => 4 segments
+2025-02-27 00:47:33 [INFO] MAIN: [OK] data/downloads/talk_benet_bwc.mp3 => 2 segments
+2025-02-27 00:47:33 [INFO] MAIN: [OK] data/downloads/nationalspirit1_40_various.mp3 => 6 segments
+2025-02-27 00:47:34 [INFO] MAIN: [OK] data/downloads/talk_benet_zm.mp3 => 2 segments
+2025-02-27 00:47:34 [INFO] MAIN: [OK] data/downloads/nationalspirit1_47_various.mp3 => 9 segments
+2025-02-27 00:47:35 [INFO] MAIN: [OK] data/downloads/nationalspirit1_52_various.mp3 => 4 segments
+2025-02-27 00:47:35 [INFO] MAIN: [OK] data/downloads/nationalspirit1_55_various.mp3 => 2 segments
+2025-02-27 00:47:37 [INFO] MAIN: [OK] data/downloads/nationalspirit1_36_various.mp3 => 11 segments
+2025-02-27 00:47:38 [INFO] MAIN: [OK] data/downloads/nationalspirit1_31_various.mp3 => 6 segments
+2025-02-27 00:47:43 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_07_scott.mp3 => 59 segments
+2025-02-27 00:47:44 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_pfs.mp3 => 4 segments
+2025-02-27 00:47:45 [INFO] MAIN: [OK] data/downloads/wonderfulhistoryofpeterschlemihl_07_vonchamisso.mp3 => 24 segments
+2025-02-27 00:47:45 [INFO] MAIN: [OK] data/downloads/talk_benet_bk.mp3 => 2 segments
+2025-02-27 00:47:46 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_05_scott.mp3 => 69 segments
+2025-02-27 00:47:46 [INFO] MAIN: [OK] data/downloads/nationalspirit1_23_various.mp3 => 4 segments
+2025-02-27 00:47:46 [INFO] MAIN: [OK] data/downloads/talk_benet_slm.mp3 => 1 segments
+2025-02-27 00:47:46 [INFO] MAIN: [OK] data/downloads/nationalspirit1_54_various.mp3 => 5 segments
+2025-02-27 00:47:46 [INFO] MAIN: [OK] data/downloads/talk_benet_pfs.mp3 => 2 segments
+2025-02-27 00:47:47 [INFO] MAIN: [OK] data/downloads/nationalspirit1_53_various.mp3 => 3 segments
+2025-02-27 00:47:47 [INFO] MAIN: [OK] data/downloads/nationalspirit1_06_various.mp3 => 5 segments
+2025-02-27 00:47:48 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_gll.mp3 => 5 segments
+2025-02-27 00:47:48 [INFO] MAIN: [OK] data/downloads/nationalspirit1_13_various.mp3 => 4 segments
+2025-02-27 00:47:49 [INFO] MAIN: [OK] data/downloads/nationalspirit1_46_various.mp3 => 9 segments
+2025-02-27 00:47:50 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_02_scott.mp3 => 66 segments
+2025-02-27 00:47:51 [INFO] MAIN: [OK] data/downloads/nationalspirit1_41_various.mp3 => 7 segments
+2025-02-27 00:47:51 [INFO] MAIN: [OK] data/downloads/nationalspirit1_14_various.mp3 => 3 segments
+2025-02-27 00:47:51 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_ch.mp3 => 3 segments
+2025-02-27 00:47:52 [INFO] MAIN: [OK] data/downloads/nationalspirit1_22_various.mp3 => 2 segments
+2025-02-27 00:47:52 [INFO] MAIN: [OK] data/downloads/nationalspirit1_25_various.mp3 => 2 segments
+2025-02-27 00:47:53 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_bwc.mp3 => 3 segments
+2025-02-27 00:47:53 [INFO] MAIN: [OK] data/downloads/nationalspirit1_30_various.mp3 => 5 segments
+2025-02-27 00:47:53 [INFO] MAIN: [OK] data/downloads/nationalspirit1_37_various.mp3 => 3 segments
+2025-02-27 00:48:02 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_07_gold.mp3 => 55 segments
+2025-02-27 00:48:11 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_06_gold.mp3 => 43 segments
+2025-02-27 00:48:13 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_04_scott.mp3 => 71 segments
+2025-02-27 00:48:19 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_06_scott.mp3 => 57 segments
+2025-02-27 00:48:27 [INFO] MAIN: [OK] data/downloads/characters_02_ferrero.mp3 => 91 segments
+2025-02-27 00:48:29 [INFO] MAIN: [OK] data/downloads/characters_03_ferrero.mp3 => 93 segments
+2025-02-27 00:48:30 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_03_scott.mp3 => 73 segments
+2025-02-27 00:48:35 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_01_scott.mp3 => 96 segments
+2025-02-27 00:48:43 [INFO] MAIN: [OK] data/downloads/characters_01_ferrero.mp3 => 105 segments
+2025-02-27 00:48:44 [INFO] MAIN: [OK] data/downloads/characters_04_ferrero.mp3 => 120 segments
+2025-02-27 00:48:44 [INFO] MAIN: [Cut] Completed cutting.
+2025-02-27 00:48:44 [INFO] MAIN: 
+[Segment Statistics]
+2025-02-27 00:53:38 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:53:39 [INFO] Download: ==================== Starting Download ====================
+2025-02-27 00:53:39 [INFO] MAIN: [Download] 200 URLs to download.
+2025-02-27 00:54:16 [INFO] MAIN: [Download Summary] Success=200, Failed=0, Total=200
+2025-02-27 00:54:16 [INFO] MAIN: Total audio length: 25.14 hours
+2025-02-27 00:54:16 [INFO] Download: ==================== Completed Download ====================
+2025-02-27 00:54:16 [INFO] VAD: ==================== Starting VAD ====================
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Found 202 audio files.
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_bwc.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_51_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_21_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: goodofmarriage_03_augustine.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_06_scott.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_13_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_aps.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_06_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_dl.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_28_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_58_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_44_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_34_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_mm.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_03_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_pfs.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_31_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_rr.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_41_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: wonderfulhistoryofpeterschlemihl_07_vonchamisso.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_54_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: someonetowatchoverme_08_gold.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_16_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: characters_02_ferrero.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_ks.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_48_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_38_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_syk.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: characters_01_ferrero.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_09_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_lcw.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_lah.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: someonetowatchoverme_05_gold.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_07_scott.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_57_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_32_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_42_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_gll.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: johnhancock_02_sears.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_19_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_47_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_01_scott.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_37_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_05_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_slm.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_bk.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_zm.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_10_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_map.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: characters_04_ferrero.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_52_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_22_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_maf.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: characters_03_ferrero.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_17_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_04_scott.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_aps.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_39_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_49_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_bwc.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_55_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_25_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_40_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_30_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_02_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_rr.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_35_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_bc.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_dl.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_pfs.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_02_scott.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_mm.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_29_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_js.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_20_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_50_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_sp.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_23_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_53_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_lcw.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_05_scott.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_11_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_awb.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: goodofmarriage_01_augustine.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_ikl.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_04_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_18_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_bk.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_36_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_46_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_pr.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_ls.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: goodofmarriage_02_augustine.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_43_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_33_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_03_scott.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_08_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_ch.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_56_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: someonetowatchoverme_07_gold.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: someonetowatchoverme_06_gold.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_14_various.mp3
+2025-02-27 00:54:16 [INFO] MAIN: [VAD] Processing 100 files (others skipped).
+2025-02-27 00:54:21 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:54:21 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:54:21 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:54:21 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:54:21 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:54:21 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:54:21 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:54:21 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:54:21 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:54:21 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:54:21 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 00:54:23 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_16_westminsterassembly.mp3
+2025-02-27 00:54:23 [INFO] MAIN: [VAD] Processed file: salad_smith_dc.mp3
+2025-02-27 00:54:24 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_dc.mp3
+2025-02-27 00:54:24 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_pr.mp3
+2025-02-27 00:54:24 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_el0.mp3
+2025-02-27 00:54:26 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_alp.mp3
+2025-02-27 00:54:26 [INFO] MAIN: [VAD] Processed file: richcrooks_02_young.mp3
+2025-02-27 00:54:30 [INFO] MAIN: [VAD] Processed file: richcrooks_09_young.mp3
+2025-02-27 00:54:32 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_vod.mp3
+2025-02-27 00:54:36 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_01_westminsterassembly.mp3
+2025-02-27 00:54:38 [INFO] MAIN: [VAD] Processed file: richcrooks_04_young.mp3
+2025-02-27 00:54:39 [INFO] MAIN: [VAD] Processed file: sacrifice_11_bavnick.mp3
+2025-02-27 00:54:39 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_05_westminsterassembly.mp3
+2025-02-27 00:54:40 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_hs.mp3
+2025-02-27 00:54:41 [INFO] MAIN: [VAD] Processed file: salad_smith_el0.mp3
+2025-02-27 00:54:41 [INFO] MAIN: [VAD] Processed file: someonetowatchoverme_03_gold.mp3
+2025-02-27 00:54:42 [INFO] MAIN: [VAD] Processed file: richcrooks_10_young.mp3
+2025-02-27 00:54:43 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_lcw.mp3
+2025-02-27 01:05:00 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:05:01 [INFO] Download: ==================== Starting Download ====================
+2025-02-27 01:05:01 [INFO] MAIN: [Download] 200 URLs to download.
+2025-02-27 01:06:21 [INFO] MAIN: [Download Summary] Success=200, Failed=0, Total=200
+2025-02-27 01:06:21 [INFO] MAIN: Total audio length: 24.61 hours
+2025-02-27 01:06:21 [INFO] Download: ==================== Completed Download ====================
+2025-02-27 01:06:21 [INFO] VAD: ==================== Starting VAD ====================
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Found 200 audio files.
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: directoryforpublicworship_05_westminsterassembly.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_bwc.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_51_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: restingwheel_wordsworth_dc.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_21_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: goodofmarriage_03_augustine.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_06_scott.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: sacrifice_11_bavnick.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_13_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_aps.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_06_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_dl.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_28_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: restingwheel_wordsworth_pr.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_58_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: restingwheel_wordsworth_el0.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_44_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_34_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: richcrooks_02_young.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: directoryforpublicworship_16_westminsterassembly.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_mm.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: richcrooks_09_young.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_03_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: salad_smith_dc.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_pfs.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: directoryforpublicworship_01_westminsterassembly.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: restingwheel_wordsworth_alp.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_31_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_rr.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_41_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: someonetowatchoverme_03_gold.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: richcrooks_04_young.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_54_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: restingwheel_wordsworth_vod.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: richcrooks_10_young.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: restingwheel_wordsworth_hs.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: someonetowatchoverme_08_gold.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_16_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: characters_02_ferrero.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_ks.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: salad_smith_el0.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_48_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_38_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_syk.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: characters_01_ferrero.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: restingwheel_wordsworth_lcw.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_09_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_lcw.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_lah.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: someonetowatchoverme_05_gold.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_07_scott.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_57_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_32_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_42_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_gll.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_19_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_47_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_01_scott.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_37_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_05_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_slm.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_bk.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_zm.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_10_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_map.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: characters_04_ferrero.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_52_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_22_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_maf.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: characters_03_ferrero.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_17_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_04_scott.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_aps.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_39_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_49_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_bwc.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_55_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_25_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_40_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_30_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_02_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_rr.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_35_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_bc.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_dl.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_pfs.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_02_scott.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_mm.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_29_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_js.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_20_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_50_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_sp.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_23_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_53_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_lcw.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_05_scott.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_11_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_awb.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: goodofmarriage_01_augustine.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_ikl.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_04_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_18_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_bk.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_36_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_46_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: talk_benet_pr.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_ls.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: goodofmarriage_02_augustine.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_43_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_33_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: visittoparisin1814_03_scott.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_08_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: snowstorm_emerson_ch.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_56_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: someonetowatchoverme_07_gold.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: someonetowatchoverme_06_gold.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Skipped already processed file: nationalspirit1_14_various.mp3
+2025-02-27 01:06:21 [INFO] MAIN: [VAD] Processing 82 files (others skipped).
+2025-02-27 01:06:27 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:06:27 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:06:27 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:06:27 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:06:27 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:06:27 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:06:27 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:06:27 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:06:27 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:06:27 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:06:27 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:06:30 [INFO] MAIN: [VAD] Processed file: salad_smith_slm.mp3
+2025-02-27 01:06:30 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_lah.mp3
+2025-02-27 01:06:37 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_11_westminsterassembly.mp3
+2025-02-27 01:06:42 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_02_westminsterassembly.mp3
+2025-02-27 01:06:45 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_12_westminsterassembly.mp3
+2025-02-27 01:06:50 [INFO] MAIN: [VAD] Processed file: richcrooks_08_young.mp3
+2025-02-27 01:06:52 [INFO] MAIN: [VAD] Processed file: salad_smith_mo.mp3
+2025-02-27 01:06:54 [INFO] MAIN: [VAD] Processed file: richcrooks_03_young.mp3
+2025-02-27 01:07:00 [INFO] MAIN: [VAD] Processed file: sacrifice_08_bavnick.mp3
+2025-02-27 01:07:01 [INFO] MAIN: [VAD] Processed file: sacrifice_02_bavnick.mp3
+2025-02-27 01:07:02 [INFO] MAIN: [VAD] Processed file: salad_smith_lcw.mp3
+2025-02-27 01:07:03 [INFO] MAIN: [VAD] Processed file: salad_smith_lah.mp3
+2025-02-27 01:07:03 [INFO] MAIN: [VAD] Processed file: someonetowatchoverme_02_gold.mp3
+2025-02-27 01:07:04 [INFO] MAIN: [VAD] Processed file: familywellordered_05_mather.mp3
+2025-02-27 01:07:09 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_15_westminsterassembly.mp3
+2025-02-27 01:07:13 [INFO] MAIN: [VAD] Processed file: sacrifice_01_bavnick.mp3
+2025-02-27 01:07:15 [INFO] MAIN: [VAD] Processed file: someonetowatchoverme_04_gold.mp3
+2025-02-27 01:07:16 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_ws.mp3
+2025-02-27 01:07:17 [INFO] MAIN: [VAD] Processed file: sacrifice_04_bavnick.mp3
+2025-02-27 01:07:17 [INFO] MAIN: [VAD] Processed file: abysmalhorror_05_wallis.mp3
+2025-02-27 01:07:17 [INFO] MAIN: [VAD] Processed file: abysmalhorror_02_wallis.mp3
+2025-02-27 01:07:18 [INFO] MAIN: [VAD] Processed file: salad_smith_bc.mp3
+2025-02-27 01:07:19 [INFO] MAIN: [VAD] Processed file: salad_smith_cf.mp3
+2025-02-27 01:07:19 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_ah.mp3
+2025-02-27 01:07:20 [INFO] MAIN: [VAD] Processed file: salad_smith_ikl.mp3
+2025-02-27 01:07:21 [INFO] MAIN: [VAD] Processed file: salad_smith_pfs.mp3
+2025-02-27 01:07:22 [INFO] MAIN: [VAD] Processed file: salad_smith_ls.mp3
+2025-02-27 01:07:22 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_13_westminsterassembly.mp3
+2025-02-27 01:07:23 [INFO] MAIN: [VAD] Processed file: sacrifice_12_bavnick.mp3
+2025-02-27 01:07:25 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_bk.mp3
+2025-02-27 01:07:26 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_06_westminsterassembly.mp3
+2025-02-27 01:07:27 [INFO] MAIN: [VAD] Processed file: abysmalhorror_07_wallis.mp3
+2025-02-27 01:07:30 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_17_westminsterassembly.mp3
+2025-02-27 01:07:30 [INFO] MAIN: [VAD] Processed file: richcrooks_14_young.mp3
+2025-02-27 01:07:30 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_09_westminsterassembly.mp3
+2025-02-27 01:07:31 [INFO] MAIN: [VAD] Processed file: richcrooks_11_young.mp3
+2025-02-27 01:07:31 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_pfs.mp3
+2025-02-27 01:07:32 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_ls.mp3
+2025-02-27 01:07:33 [INFO] MAIN: [VAD] Processed file: salad_smith_aps.mp3
+2025-02-27 01:07:33 [INFO] MAIN: [VAD] Processed file: salad_smith_cl.mp3
+2025-02-27 01:07:34 [INFO] MAIN: [VAD] Processed file: familywellordered_02_mather.mp3
+2025-02-27 01:07:34 [INFO] MAIN: [VAD] Processed file: sacrifice_07_bavnick.mp3
+2025-02-27 01:07:34 [INFO] MAIN: [VAD] Processed file: salad_smith_bwc.mp3
+2025-02-27 01:07:36 [INFO] MAIN: [VAD] Processed file: someonetowatchoverme_01_gold.mp3
+2025-02-27 01:07:36 [INFO] MAIN: [VAD] Processed file: salad_smith_bk.mp3
+2025-02-27 01:07:36 [INFO] MAIN: [VAD] Processed file: richcrooks_05_young.mp3
+2025-02-27 01:07:37 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_04_westminsterassembly.mp3
+2025-02-27 01:07:39 [INFO] MAIN: [VAD] Processed file: sacrifice_00_bavnick.mp3
+2025-02-27 01:07:40 [INFO] MAIN: [VAD] Processed file: familywellordered_03_mather.mp3
+2025-02-27 01:07:41 [INFO] MAIN: [VAD] Processed file: sacrifice_09_bavnick.mp3
+2025-02-27 01:07:41 [INFO] MAIN: [VAD] Processed file: salad_smith_fs.mp3
+2025-02-27 01:07:43 [INFO] MAIN: [VAD] Processed file: salad_smith_dl.mp3
+2025-02-27 01:07:43 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_ks.mp3
+2025-02-27 01:07:44 [INFO] MAIN: [VAD] Processed file: salad_smith_gysz.mp3
+2025-02-27 01:07:45 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_gln.mp3
+2025-02-27 01:07:46 [INFO] MAIN: [VAD] Processed file: richcrooks_06_young.mp3
+2025-02-27 01:07:48 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_07_westminsterassembly.mp3
+2025-02-27 01:07:48 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_08_westminsterassembly.mp3
+2025-02-27 01:07:51 [INFO] MAIN: [VAD] Processed file: sacrifice_05_bavnick.mp3
+2025-02-27 01:07:52 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_rr.mp3
+2025-02-27 01:07:53 [INFO] MAIN: [VAD] Processed file: sacrifice_10_bavnick.mp3
+2025-02-27 01:07:53 [INFO] MAIN: [VAD] Processed file: salad_smith_sp.mp3
+2025-02-27 01:07:53 [INFO] MAIN: [VAD] Processed file: richcrooks_01_young.mp3
+2025-02-27 01:07:54 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_14_westminsterassembly.mp3
+2025-02-27 01:07:56 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_dl.mp3
+2025-02-27 01:07:56 [INFO] MAIN: [VAD] Processed file: salad_smith_ks.mp3
+2025-02-27 01:07:56 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_03_westminsterassembly.mp3
+2025-02-27 01:07:56 [INFO] MAIN: [VAD] Processed file: salad_smith_gln.mp3
+2025-02-27 01:07:58 [INFO] MAIN: [VAD] Processed file: richcrooks_12_young.mp3
+2025-02-27 01:07:58 [INFO] MAIN: [VAD] Processed file: salad_smith_gll.mp3
+2025-02-27 01:07:59 [INFO] MAIN: [VAD] Processed file: restingwheel_wordsworth_sp.mp3
+2025-02-27 01:08:02 [INFO] MAIN: [VAD] Processed file: directoryforpublicworship_10_westminsterassembly.mp3
+2025-02-27 01:08:02 [INFO] MAIN: [VAD] Processed file: familywellordered_01_mather.mp3
+2025-02-27 01:08:04 [INFO] MAIN: [VAD] Processed file: abysmalhorror_01_wallis.mp3
+2025-02-27 01:08:08 [INFO] MAIN: [VAD] Processed file: abysmalhorror_04_wallis.mp3
+2025-02-27 01:08:08 [INFO] MAIN: [VAD] Processed file: richcrooks_07_young.mp3
+2025-02-27 01:08:10 [INFO] MAIN: [VAD] Processed file: sacrifice_06_bavnick.mp3
+2025-02-27 01:08:16 [INFO] MAIN: [VAD] Processed file: sacrifice_03_bavnick.mp3
+2025-02-27 01:08:16 [INFO] MAIN: [VAD] Processed file: abysmalhorror_06_wallis.mp3
+2025-02-27 01:08:19 [INFO] MAIN: [VAD] Processed file: richcrooks_13_young.mp3
+2025-02-27 01:08:28 [INFO] MAIN: [VAD] Processed file: abysmalhorror_03_wallis.mp3
+2025-02-27 01:08:32 [INFO] MAIN: [VAD] Processed file: familywellordered_04_mather.mp3
+2025-02-27 01:08:32 [INFO] MAIN: [VAD] Processing completed.
+2025-02-27 01:08:32 [INFO] VAD: ==================== Completed VAD ====================
+2025-02-27 01:08:32 [INFO] MAIN: [Cut] Found 202 VAD json files.
+2025-02-27 01:08:37 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:08:37 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:08:37 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:08:37 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:08:37 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:08:38 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:08:38 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:08:38 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:08:38 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:08:38 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:08:38 [INFO] MAIN: [VAD] Loading model...
+2025-02-27 01:08:39 [INFO] MAIN: [OK] data/downloads/nationalspirit1_03_various.mp3 => 2 segments
+2025-02-27 01:08:39 [INFO] MAIN: [OK] data/downloads/nationalspirit1_51_various.mp3 => 2 segments
+2025-02-27 01:08:39 [INFO] MAIN: [OK] data/downloads/nationalspirit1_56_various.mp3 => 4 segments
+2025-02-27 01:08:39 [INFO] MAIN: [OK] data/downloads/salad_smith_aps.mp3 => 4 segments
+2025-02-27 01:08:39 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_03_westminsterassembly.mp3 => 4 segments
+2025-02-27 01:08:39 [INFO] MAIN: [OK] data/downloads/nationalspirit1_11_various.mp3 => 5 segments
+2025-02-27 01:08:39 [INFO] MAIN: [OK] data/downloads/nationalspirit1_43_various.mp3 => 5 segments
+2025-02-27 01:08:39 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_07_westminsterassembly.mp3 => 5 segments
+2025-02-27 01:08:39 [INFO] MAIN: [OK] data/downloads/nationalspirit1_04_various.mp3 => 4 segments
+2025-02-27 01:08:39 [INFO] MAIN: [OK] data/downloads/nationalspirit1_16_various.mp3 => 6 segments
+2025-02-27 01:08:40 [INFO] MAIN: [OK] data/downloads/nationalspirit1_32_various.mp3 => 4 segments
+2025-02-27 01:08:40 [INFO] MAIN: [OK] data/downloads/nationalspirit1_35_various.mp3 => 6 segments
+2025-02-27 01:08:40 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_ws.mp3 => 3 segments
+2025-02-27 01:08:40 [INFO] MAIN: [OK] data/downloads/nationalspirit1_20_various.mp3 => 6 segments
+2025-02-27 01:08:40 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_dl.mp3 => 5 segments
+2025-02-27 01:08:40 [INFO] MAIN: [OK] data/downloads/nationalspirit1_44_various.mp3 => 8 segments
+2025-02-27 01:08:40 [INFO] MAIN: [OK] data/downloads/nationalspirit1_10_various.mp3 => 3 segments
+2025-02-27 01:08:40 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_ls.mp3 => 3 segments
+2025-02-27 01:08:41 [INFO] MAIN: [OK] data/downloads/salad_smith_ikl.mp3 => 2 segments
+2025-02-27 01:08:41 [INFO] MAIN: [OK] data/downloads/nationalspirit1_42_various.mp3 => 7 segments
+2025-02-27 01:08:41 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_hs.mp3 => 2 segments
+2025-02-27 01:08:41 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_lcw.mp3 => 2 segments
+2025-02-27 01:08:41 [INFO] MAIN: [OK] data/downloads/nationalspirit1_17_various.mp3 => 3 segments
+2025-02-27 01:08:41 [INFO] MAIN: [OK] data/downloads/talk_benet_lah.mp3 => 2 segments
+2025-02-27 01:08:41 [INFO] MAIN: [OK] data/downloads/salad_smith_gysz.mp3 => 3 segments
+2025-02-27 01:08:41 [INFO] MAIN: [OK] data/downloads/nationalspirit1_50_various.mp3 => 4 segments
+2025-02-27 01:08:41 [INFO] MAIN: [OK] data/downloads/nationalspirit1_05_various.mp3 => 3 segments
+2025-02-27 01:08:41 [INFO] MAIN: [OK] data/downloads/nationalspirit1_02_various.mp3 => 5 segments
+2025-02-27 01:08:42 [INFO] MAIN: [OK] data/downloads/nationalspirit1_57_various.mp3 => 7 segments
+2025-02-27 01:08:42 [INFO] MAIN: [OK] data/downloads/familywellordered_05_mather.mp3 => 13 segments
+2025-02-27 01:08:42 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_15_westminsterassembly.mp3 => 5 segments
+2025-02-27 01:08:42 [INFO] MAIN: [OK] data/downloads/richcrooks_03_young.mp3 => 13 segments
+2025-02-27 01:08:42 [INFO] MAIN: [OK] data/downloads/nationalspirit1_34_various.mp3 => 3 segments
+2025-02-27 01:08:42 [INFO] MAIN: [OK] data/downloads/nationalspirit1_33_various.mp3 => 5 segments
+2025-02-27 01:08:43 [INFO] MAIN: [OK] data/downloads/nationalspirit1_21_various.mp3 => 5 segments
+2025-02-27 01:08:43 [INFO] MAIN: [OK] data/downloads/talk_benet_mm.mp3 => 2 segments
+2025-02-27 01:08:43 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_11_westminsterassembly.mp3 => 12 segments
+2025-02-27 01:08:43 [INFO] MAIN: [OK] data/downloads/salad_smith_el0.mp3 => 3 segments
+2025-02-27 01:08:44 [INFO] MAIN: [OK] data/downloads/salad_smith_ls.mp3 => 3 segments
+2025-02-27 01:08:44 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_10_westminsterassembly.mp3 => 3 segments
+2025-02-27 01:08:44 [INFO] MAIN: [OK] data/downloads/richcrooks_01_young.mp3 => 6 segments
+2025-02-27 01:08:45 [INFO] MAIN: [OK] data/downloads/richcrooks_06_young.mp3 => 14 segments
+2025-02-27 01:08:45 [INFO] MAIN: [OK] data/downloads/familywellordered_03_mather.mp3 => 8 segments
+2025-02-27 01:08:45 [INFO] MAIN: [OK] data/downloads/salad_smith_ks.mp3 => 3 segments
+2025-02-27 01:08:45 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_14_westminsterassembly.mp3 => 10 segments
+2025-02-27 01:08:46 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_gln.mp3 => 3 segments
+2025-02-27 01:08:46 [INFO] MAIN: [OK] data/downloads/nationalspirit1_39_various.mp3 => 4 segments
+2025-02-27 01:08:46 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_lcw.mp3 => 4 segments
+2025-02-27 01:08:46 [INFO] MAIN: [OK] data/downloads/talk_benet_rr.mp3 => 3 segments
+2025-02-27 01:08:47 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_03_gold.mp3 => 23 segments
+2025-02-27 01:08:47 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_rr.mp3 => 3 segments
+2025-02-27 01:08:47 [INFO] MAIN: [OK] data/downloads/richcrooks_12_young.mp3 => 25 segments
+2025-02-27 01:08:48 [INFO] MAIN: [OK] data/downloads/talk_benet_bc.mp3 => 2 segments
+2025-02-27 01:08:48 [INFO] MAIN: [OK] data/downloads/salad_smith_dc.mp3 => 2 segments
+2025-02-27 01:08:48 [INFO] MAIN: [OK] data/downloads/talk_benet_awb.mp3 => 2 segments
+2025-02-27 01:08:48 [INFO] MAIN: [OK] data/downloads/talk_benet_syk.mp3 => 3 segments
+2025-02-27 01:08:48 [INFO] MAIN: [OK] data/downloads/talk_benet_pr.mp3 => 3 segments
+2025-02-27 01:08:49 [INFO] MAIN: [OK] data/downloads/nationalspirit1_08_various.mp3 => 5 segments
+2025-02-27 01:08:49 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_08_gold.mp3 => 26 segments
+2025-02-27 01:08:49 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_bk.mp3 => 4 segments
+2025-02-27 01:08:50 [INFO] MAIN: [OK] data/downloads/salad_smith_pfs.mp3 => 2 segments
+2025-02-27 01:08:50 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_pr.mp3 => 3 segments
+2025-02-27 01:08:50 [INFO] MAIN: [OK] data/downloads/salad_smith_slm.mp3 => 2 segments
+2025-02-27 01:08:51 [INFO] MAIN: [OK] data/downloads/nationalspirit1_48_various.mp3 => 6 segments
+2025-02-27 01:08:51 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_sp.mp3 => 3 segments
+2025-02-27 01:08:53 [INFO] MAIN: [OK] data/downloads/richcrooks_10_young.mp3 => 10 segments
+2025-02-27 01:09:01 [INFO] MAIN: [OK] data/downloads/sacrifice_06_bavnick.mp3 => 30 segments
+2025-02-27 01:09:02 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_02_gold.mp3 => 34 segments
+2025-02-27 01:09:02 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_maf.mp3 => 4 segments
+2025-02-27 01:09:02 [INFO] MAIN: [OK] data/downloads/nationalspirit1_38_various.mp3 => 7 segments
+2025-02-27 01:09:03 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_alp.mp3 => 2 segments
+2025-02-27 01:09:03 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_05_gold.mp3 => 41 segments
+2025-02-27 01:09:03 [WARNING] MAIN: [WARN] Audio file not found for data/vad/johnhancock_02_sears.json
+2025-02-27 01:09:03 [INFO] MAIN: [OK] data/downloads/salad_smith_gll.mp3 => 3 segments
+2025-02-27 01:09:05 [INFO] MAIN: [OK] data/downloads/richcrooks_09_young.mp3 => 11 segments
+2025-02-27 01:09:06 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_02_westminsterassembly.mp3 => 14 segments
+2025-02-27 01:09:06 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_ah.mp3 => 3 segments
+2025-02-27 01:09:06 [INFO] MAIN: [OK] data/downloads/talk_benet_ks.mp3 => 2 segments
+2025-02-27 01:09:07 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_ks.mp3 => 2 segments
+2025-02-27 01:09:11 [INFO] MAIN: [OK] data/downloads/richcrooks_04_young.mp3 => 13 segments
+2025-02-27 01:09:11 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_06_westminsterassembly.mp3 => 19 segments
+2025-02-27 01:09:12 [INFO] MAIN: [OK] data/downloads/nationalspirit1_49_various.mp3 => 7 segments
+2025-02-27 01:09:12 [INFO] MAIN: [OK] data/downloads/goodofmarriage_01_augustine.mp3 => 49 segments
+2025-02-27 01:09:12 [INFO] MAIN: [OK] data/downloads/talk_benet_lcw.mp3 => 2 segments
+2025-02-27 01:09:12 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_dc.mp3 => 2 segments
+2025-02-27 01:09:13 [INFO] MAIN: [OK] data/downloads/salad_smith_bwc.mp3 => 3 segments
+2025-02-27 01:09:13 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_lah.mp3 => 2 segments
+2025-02-27 01:09:15 [INFO] MAIN: [OK] data/downloads/abysmalhorror_05_wallis.mp3 => 52 segments
+2025-02-27 01:09:18 [INFO] MAIN: [OK] data/downloads/sacrifice_01_bavnick.mp3 => 45 segments
+2025-02-27 01:09:19 [INFO] MAIN: [OK] data/downloads/salad_smith_bc.mp3 => 3 segments
+2025-02-27 01:09:20 [INFO] MAIN: [OK] data/downloads/nationalspirit1_09_various.mp3 => 6 segments
+2025-02-27 01:09:21 [INFO] MAIN: [OK] data/downloads/goodofmarriage_02_augustine.mp3 => 50 segments
+2025-02-27 01:09:23 [INFO] MAIN: [OK] data/downloads/abysmalhorror_06_wallis.mp3 => 55 segments
+2025-02-27 01:09:23 [INFO] MAIN: [OK] data/downloads/sacrifice_12_bavnick.mp3 => 23 segments
+2025-02-27 01:09:28 [INFO] MAIN: [OK] data/downloads/sacrifice_00_bavnick.mp3 => 16 segments
+2025-02-27 01:09:28 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_04_gold.mp3 => 45 segments
+2025-02-27 01:09:28 [INFO] MAIN: [OK] data/downloads/familywellordered_01_mather.mp3 => 7 segments
+2025-02-27 01:09:29 [INFO] MAIN: [OK] data/downloads/salad_smith_cf.mp3 => 3 segments
+2025-02-27 01:09:29 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_aps.mp3 => 4 segments
+2025-02-27 01:09:30 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_01_gold.mp3 => 10 segments
+2025-02-27 01:09:30 [INFO] MAIN: [OK] data/downloads/nationalspirit1_28_various.mp3 => 2 segments
+2025-02-27 01:09:35 [INFO] MAIN: [OK] data/downloads/sacrifice_10_bavnick.mp3 => 22 segments
+2025-02-27 01:09:36 [INFO] MAIN: [OK] data/downloads/salad_smith_lah.mp3 => 2 segments
+2025-02-27 01:09:37 [INFO] MAIN: [OK] data/downloads/sacrifice_07_bavnick.mp3 => 33 segments
+2025-02-27 01:09:37 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_ls.mp3 => 4 segments
+2025-02-27 01:09:38 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_02_scott.mp3 => 66 segments
+2025-02-27 01:09:39 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_16_westminsterassembly.mp3 => 2 segments
+2025-02-27 01:09:39 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_05_scott.mp3 => 69 segments
+2025-02-27 01:09:39 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_dl.mp3 => 3 segments
+2025-02-27 01:09:40 [INFO] MAIN: [OK] data/downloads/talk_benet_dl.mp3 => 3 segments
+2025-02-27 01:09:40 [INFO] MAIN: [OK] data/downloads/nationalspirit1_19_various.mp3 => 4 segments
+2025-02-27 01:09:43 [INFO] MAIN: [OK] data/downloads/goodofmarriage_03_augustine.mp3 => 44 segments
+2025-02-27 01:09:47 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_12_westminsterassembly.mp3 => 16 segments
+2025-02-27 01:09:47 [INFO] MAIN: [OK] data/downloads/sacrifice_05_bavnick.mp3 => 24 segments
+2025-02-27 01:09:48 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_map.mp3 => 3 segments
+2025-02-27 01:09:49 [INFO] MAIN: [OK] data/downloads/sacrifice_02_bavnick.mp3 => 25 segments
+2025-02-27 01:09:49 [INFO] MAIN: [OK] data/downloads/richcrooks_07_young.mp3 => 13 segments
+2025-02-27 01:09:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_29_various.mp3 => 3 segments
+2025-02-27 01:09:50 [INFO] MAIN: [OK] data/downloads/richcrooks_02_young.mp3 => 6 segments
+2025-02-27 01:09:51 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_ikl.mp3 => 3 segments
+2025-02-27 01:09:54 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_08_westminsterassembly.mp3 => 14 segments
+2025-02-27 01:09:54 [INFO] MAIN: [OK] data/downloads/salad_smith_gln.mp3 => 3 segments
+2025-02-27 01:10:06 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_07_scott.mp3 => 59 segments
+2025-02-27 01:10:07 [INFO] MAIN: [OK] data/downloads/salad_smith_dl.mp3 => 3 segments
+2025-02-27 01:10:08 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_04_westminsterassembly.mp3 => 4 segments
+2025-02-27 01:10:13 [INFO] MAIN: [OK] data/downloads/abysmalhorror_04_wallis.mp3 => 61 segments
+2025-02-27 01:10:14 [INFO] MAIN: [OK] data/downloads/talk_benet_aps.mp3 => 2 segments
+2025-02-27 01:10:15 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_pfs.mp3 => 2 segments
+2025-02-27 01:10:16 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_mm.mp3 => 4 segments
+2025-02-27 01:10:18 [INFO] MAIN: [OK] data/downloads/abysmalhorror_03_wallis.mp3 => 63 segments
+2025-02-27 01:10:19 [INFO] MAIN: [OK] data/downloads/nationalspirit1_58_various.mp3 => 7 segments
+2025-02-27 01:10:19 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_js.mp3 => 5 segments
+2025-02-27 01:10:30 [INFO] MAIN: [OK] data/downloads/sacrifice_03_bavnick.mp3 => 38 segments
+2025-02-27 01:10:34 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_07_gold.mp3 => 55 segments
+2025-02-27 01:10:36 [INFO] MAIN: [OK] data/downloads/sacrifice_04_bavnick.mp3 => 50 segments
+2025-02-27 01:10:39 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_04_scott.mp3 => 71 segments
+2025-02-27 01:10:39 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_vod.mp3 => 2 segments
+2025-02-27 01:10:40 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_rr.mp3 => 4 segments
+2025-02-27 01:10:40 [INFO] MAIN: [OK] data/downloads/nationalspirit1_18_various.mp3 => 16 segments
+2025-02-27 01:10:40 [INFO] MAIN: [OK] data/downloads/salad_smith_cl.mp3 => 3 segments
+2025-02-27 01:10:41 [INFO] MAIN: [OK] data/downloads/salad_smith_lcw.mp3 => 2 segments
+2025-02-27 01:10:41 [INFO] MAIN: [OK] data/downloads/talk_benet_bwc.mp3 => 2 segments
+2025-02-27 01:10:41 [INFO] MAIN: [OK] data/downloads/richcrooks_08_young.mp3 => 8 segments
+2025-02-27 01:10:42 [INFO] MAIN: [OK] data/downloads/sacrifice_11_bavnick.mp3 => 24 segments
+2025-02-27 01:10:42 [INFO] MAIN: [OK] data/downloads/abysmalhorror_01_wallis.mp3 => 32 segments
+2025-02-27 01:10:42 [INFO] MAIN: [OK] data/downloads/nationalspirit1_40_various.mp3 => 6 segments
+2025-02-27 01:10:43 [INFO] MAIN: [OK] data/downloads/richcrooks_13_young.mp3 => 39 segments
+2025-02-27 01:10:43 [INFO] MAIN: [OK] data/downloads/talk_benet_zm.mp3 => 2 segments
+2025-02-27 01:10:44 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_09_westminsterassembly.mp3 => 14 segments
+2025-02-27 01:10:44 [INFO] MAIN: [OK] data/downloads/nationalspirit1_52_various.mp3 => 4 segments
+2025-02-27 01:10:45 [INFO] MAIN: [OK] data/downloads/richcrooks_14_young.mp3 => 9 segments
+2025-02-27 01:10:45 [INFO] MAIN: [OK] data/downloads/nationalspirit1_55_various.mp3 => 2 segments
+2025-02-27 01:10:45 [INFO] MAIN: [OK] data/downloads/nationalspirit1_47_various.mp3 => 9 segments
+2025-02-27 01:10:45 [INFO] MAIN: [OK] data/downloads/salad_smith_mo.mp3 => 2 segments
+2025-02-27 01:10:46 [INFO] MAIN: [OK] data/downloads/nationalspirit1_36_various.mp3 => 11 segments
+2025-02-27 01:10:46 [INFO] MAIN: [OK] data/downloads/nationalspirit1_31_various.mp3 => 6 segments
+2025-02-27 01:10:47 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_sp.mp3 => 2 segments
+2025-02-27 01:10:47 [WARNING] MAIN: [WARN] Audio file not found for data/vad/wonderfulhistoryofpeterschlemihl_07_vonchamisso.json
+2025-02-27 01:10:48 [INFO] MAIN: [OK] data/downloads/characters_02_ferrero.mp3 => 91 segments
+2025-02-27 01:10:48 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_pfs.mp3 => 4 segments
+2025-02-27 01:10:48 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_bk.mp3 => 3 segments
+2025-02-27 01:10:49 [INFO] MAIN: [OK] data/downloads/restingwheel_wordsworth_el0.mp3 => 3 segments
+2025-02-27 01:10:49 [INFO] MAIN: [OK] data/downloads/talk_benet_bk.mp3 => 2 segments
+2025-02-27 01:10:50 [INFO] MAIN: [OK] data/downloads/sacrifice_09_bavnick.mp3 => 26 segments
+2025-02-27 01:10:50 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_01_westminsterassembly.mp3 => 15 segments
+2025-02-27 01:10:50 [INFO] MAIN: [OK] data/downloads/nationalspirit1_23_various.mp3 => 4 segments
+2025-02-27 01:10:50 [INFO] MAIN: [OK] data/downloads/salad_smith_fs.mp3 => 3 segments
+2025-02-27 01:10:51 [INFO] MAIN: [OK] data/downloads/talk_benet_slm.mp3 => 1 segments
+2025-02-27 01:10:52 [INFO] MAIN: [OK] data/downloads/nationalspirit1_54_various.mp3 => 5 segments
+2025-02-27 01:10:53 [INFO] MAIN: [OK] data/downloads/talk_benet_pfs.mp3 => 2 segments
+2025-02-27 01:10:53 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_05_westminsterassembly.mp3 => 20 segments
+2025-02-27 01:10:53 [INFO] MAIN: [OK] data/downloads/nationalspirit1_53_various.mp3 => 3 segments
+2025-02-27 01:10:54 [INFO] MAIN: [OK] data/downloads/nationalspirit1_06_various.mp3 => 5 segments
+2025-02-27 01:10:54 [INFO] MAIN: [OK] data/downloads/richcrooks_05_young.mp3 => 27 segments
+2025-02-27 01:10:54 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_gll.mp3 => 5 segments
+2025-02-27 01:10:55 [INFO] MAIN: [OK] data/downloads/nationalspirit1_13_various.mp3 => 4 segments
+2025-02-27 01:10:55 [INFO] MAIN: [OK] data/downloads/nationalspirit1_46_various.mp3 => 9 segments
+2025-02-27 01:10:56 [INFO] MAIN: [OK] data/downloads/nationalspirit1_41_various.mp3 => 7 segments
+2025-02-27 01:10:57 [INFO] MAIN: [OK] data/downloads/nationalspirit1_14_various.mp3 => 3 segments
+2025-02-27 01:10:57 [INFO] MAIN: [OK] data/downloads/salad_smith_sp.mp3 => 2 segments
+2025-02-27 01:11:04 [INFO] MAIN: [OK] data/downloads/sacrifice_08_bavnick.mp3 => 33 segments
+2025-02-27 01:11:05 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_13_westminsterassembly.mp3 => 3 segments
+2025-02-27 01:11:06 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_ch.mp3 => 3 segments
+2025-02-27 01:11:06 [INFO] MAIN: [OK] data/downloads/nationalspirit1_22_various.mp3 => 2 segments
+2025-02-27 01:11:07 [INFO] MAIN: [OK] data/downloads/characters_03_ferrero.mp3 => 93 segments
+2025-02-27 01:11:07 [INFO] MAIN: [OK] data/downloads/nationalspirit1_25_various.mp3 => 2 segments
+2025-02-27 01:11:07 [INFO] MAIN: [OK] data/downloads/directoryforpublicworship_17_westminsterassembly.mp3 => 2 segments
+2025-02-27 01:11:08 [INFO] MAIN: [OK] data/downloads/salad_smith_bk.mp3 => 2 segments
+2025-02-27 01:11:08 [INFO] MAIN: [OK] data/downloads/snowstorm_emerson_bwc.mp3 => 3 segments
+2025-02-27 01:11:08 [INFO] MAIN: [OK] data/downloads/nationalspirit1_30_various.mp3 => 5 segments
+2025-02-27 01:11:10 [INFO] MAIN: [OK] data/downloads/abysmalhorror_02_wallis.mp3 => 48 segments
+2025-02-27 01:11:10 [INFO] MAIN: [OK] data/downloads/nationalspirit1_37_various.mp3 => 3 segments
+2025-02-27 01:11:18 [INFO] MAIN: [OK] data/downloads/someonetowatchoverme_06_gold.mp3 => 43 segments
+2025-02-27 01:11:19 [INFO] MAIN: [OK] data/downloads/abysmalhorror_07_wallis.mp3 => 41 segments
+2025-02-27 01:11:20 [INFO] MAIN: [OK] data/downloads/richcrooks_11_young.mp3 => 28 segments
+2025-02-27 01:11:24 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_06_scott.mp3 => 57 segments
+2025-02-27 01:11:30 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_01_scott.mp3 => 96 segments
+2025-02-27 01:11:34 [INFO] MAIN: [OK] data/downloads/familywellordered_04_mather.mp3 => 82 segments
+2025-02-27 01:11:37 [INFO] MAIN: [OK] data/downloads/visittoparisin1814_03_scott.mp3 => 73 segments
+2025-02-27 01:11:37 [INFO] MAIN: [OK] data/downloads/familywellordered_02_mather.mp3 => 65 segments
+2025-02-27 01:11:40 [INFO] MAIN: [OK] data/downloads/characters_01_ferrero.mp3 => 105 segments
+2025-02-27 01:11:40 [INFO] MAIN: [OK] data/downloads/characters_04_ferrero.mp3 => 120 segments
+2025-02-27 01:11:40 [INFO] MAIN: [Cut] Completed cutting.
+2025-02-27 01:11:40 [INFO] MAIN: 
+[Segment Statistics]

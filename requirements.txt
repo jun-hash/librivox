@@ -1,4 +1,3 @@
-faster-whisper
 numpy>=1.20.0
 librosa>=0.9.0
 tqdm>=4.62.0
@@ -6,4 +5,5 @@ soundfile>=0.10.3
 scipy>=1.7.0
 matplotlib>=3.4.0
 pandas
+git+https://github.com/wonder-dot-ai/faster-whisper.git
 git+https://github.com/wonder-dot-ai/descript-audio-codec.git
