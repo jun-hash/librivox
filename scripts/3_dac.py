@@ -1,0 +1,1 @@
+#python3 -m dac encode ./0to100/0to100_segments --output ./0to100/0to100_codes 
