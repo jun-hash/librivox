@@ -3,7 +3,7 @@
 # 시작 시간 기록
 start_time=$(date +%s)
 
-python scripts/1_down_cut.py
+python scripts/1_down_cut.py --start_idx 0 --ind_idx 10
 
 # ASR 스크립트 실행 - 성공할 때까지 재시도
 max_attempts=3

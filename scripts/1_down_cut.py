@@ -652,7 +652,7 @@ def generate_segments_metadata(cut_dir, output_csv, ext=".mp3", max_workers=8):
                 
                 metadata.append({
                     'segment_file': str(fpath.relative_to(cut_dir)),
-                    'original_file': original_name,
+                    'file_id': original_name,
                     'segment_index': segment_idx,
                     'duration': info['duration_sec']
                 })
@@ -798,7 +798,7 @@ def run_pipeline(args):
         logger.info(f"  Total duration: {(count * avg_dur / 3600):.2f} hours\n")
         
         # Generate metadata CSV
-        metadata_csv = "segments_metadata.csv"
+        metadata_csv = "data/segments_metadata.csv"
         generate_segments_metadata(
             cut_dir=cut_dir,
             output_csv=metadata_csv

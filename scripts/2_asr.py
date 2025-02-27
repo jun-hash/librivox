@@ -3,6 +3,7 @@ import sys
 import time
 import torchaudio
 import numpy as np
+import pandas as pd
 
 from tqdm import tqdm
 from torch.utils.data import Dataset, DataLoader
@@ -98,6 +99,10 @@ def transcribe_with_dataloader(
 ):
     os.makedirs(output_dir, exist_ok=True)
 
+    # Load segments metadata
+    metadata_df = pd.read_csv('data/segments_metadata.csv')
+    metadata_df['confidence'] = None  # Add confidence column
+
     print(f"Scanning directory: {audio_dir}")
     audio_files = []
     for file in os.listdir(audio_dir):
@@ -138,7 +143,6 @@ def transcribe_with_dataloader(
     for paths, features, metas in pbar:
         start_time = time.time()
 
-        # Pass the preprocessed features directly to the model
         results_list = batched_pipeline.forward_preprocessed(
             features=features,
             metas=metas,
@@ -154,8 +158,10 @@ def transcribe_with_dataloader(
             base_filename = os.path.basename(path)
             base = os.path.splitext(base_filename)[0]
             out_path = os.path.join(output_dir, f"{base}.txt")
-            if os.path.exists(out_path):
-                continue
+            
+            # Update confidence in metadata DataFrame
+            segment_file = os.path.basename(path)
+            metadata_df.loc[metadata_df['segment_file'] == segment_file, 'confidence'] = result['confidence']
 
             if result["confidence"] < confidence_threshold:
                 continue
@@ -174,8 +180,38 @@ def transcribe_with_dataloader(
             }
         )
 
+    # Save updated metadata with confidence values
+    metadata_df.to_csv('data/segments_metadata_confidence.csv', index=False)
+    
+    # Calculate statistics for segments that passed confidence threshold
+    passed_segments = metadata_df[metadata_df['confidence'] >= confidence_threshold]
+    total_segments = len(passed_segments)
+    total_duration = passed_segments['duration'].sum()
+    total_hours = total_duration / 3600  # Convert seconds to hours
+    
+    # Save statistics to file
+    stats_text = (
+        f"ASR Processing Statistics\n"
+        f"------------------------\n"
+        f"Date: {time.strftime('%Y-%m-%d %H:%M:%S')}\n"
+        f"Total segments processed: {len(metadata_df)}\n"
+        f"Segments passing confidence threshold ({confidence_threshold}): {total_segments}\n"
+        f"Total audio duration: {total_hours:.2f} hours ({total_duration:.2f} seconds)\n"
+        f"Average segment duration: {(total_duration/total_segments):.2f} seconds\n"
+        f"Total processing time: {total_transcription_time:.2f} seconds\n"
+    )
+    
+    os.makedirs(os.path.dirname("data/final_segment.txt"), exist_ok=True)
+    with open("data/final_segment.txt", "w", encoding="utf-8") as f:
+        f.write(stats_text)
+    
+    print("\nSegment Statistics:")
+    print(f"Total segments passing confidence threshold ({confidence_threshold}): {total_segments}")
+    print(f"Total duration: {total_hours:.2f} hours ({total_duration:.2f} seconds)")
+    print(f"Average segment duration: {(total_duration/total_segments):.2f} seconds")
+    
     print(
-        f"Finished all. Processed {total_files_processed} files. "
+        f"\nFinished all. Processed {total_files_processed} files. "
         f"Total transcription time {total_transcription_time:.2f} seconds."
     )
     return total_files_processed, total_transcription_time
@@ -203,7 +239,7 @@ if __name__ == "__main__":
     BEAM_SIZE = 5
     CONFIDENCE_THRESHOLD = 0.8
     MAX_LEN = 30
-    NUM_WORKERS = 4
+    NUM_WORKERS = 6
 
     # Start timing the entire process
     start_time = time.time()
