@@ -788,6 +788,14 @@ def run_pipeline(args):
         )
         stage_timer.end("cut")
 
+
+
+            # 4) Remove intro
+        if "intro" in stages_to_run:
+            stage_timer.start("intro")
+            remove_intro_segments(cut_dir)
+            stage_timer.end("intro")
+
         # Add segment statistics after cutting
         logger.info("\n[Segment Statistics]")
         avg_dur, min_dur, max_dur, count = measure_segment_stats(cut_dir, ext=".mp3")
@@ -804,11 +812,7 @@ def run_pipeline(args):
             output_csv=metadata_csv
         )
 
-    # 4) Remove intro
-    if "intro" in stages_to_run:
-        stage_timer.start("intro")
-        remove_intro_segments(cut_dir)
-        stage_timer.end("intro")
+
 
     # 최종 컷 후 오디오 길이
     if end_stage_idx >= list(PIPELINE_STAGES.keys()).index("cut"):
