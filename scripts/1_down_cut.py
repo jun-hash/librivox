@@ -176,26 +176,39 @@ def _download_file(url, output_dir, session=None, block_size=65536):
     except Exception as e:
         return file_name, False
 
-def download_urls(urls_file, output_dir, test_sample=None, n_threads=16):
+def download_from_csv(csv_path, output_dir, start_idx=None, end_idx=None, n_threads=16):
     """
-    - urls_file: 한 줄에 하나씩 MP3 파일 URL이 들어 있는 텍스트 파일
-    - output_dir: 다운로드 파일을 저장할 디렉토리
-    - test_sample: 앞에서부터 N개만 다운로드 (테스트용), None이면 전체 다운로드
-    - n_threads: 병렬 스레드 개수
+    Download audio files using links from CSV file.
+    
+    Args:
+        csv_path: Path to CSV file containing audio_link column
+        output_dir: Directory to save downloaded files
+        start_idx: Starting index (row number) in CSV
+        end_idx: Ending index (row number) in CSV 
+        n_threads: Number of parallel download threads
     """
     os.makedirs(output_dir, exist_ok=True)
 
-    # URL 목록 읽기
-    with open(urls_file, "r", encoding="utf-8") as f:
-        all_urls = [line.strip() for line in f if line.strip()]
+    # Read CSV and get audio links
+    try:
+        df = pd.read_csv(csv_path)
+        if 'audio_link' not in df.columns:
+            raise ValueError("CSV must contain 'audio_link' column")
+    except Exception as e:
+        logger.error(f"Failed to read CSV file: {e}")
+        return
 
-    # test_sample 지정 시 일부만 다운로드
-    if test_sample:
-        all_urls = all_urls[:test_sample]
+    # Apply index range if specified
+    if start_idx is not None or end_idx is not None:
+        start_idx = start_idx if start_idx is not None else 0
+        end_idx = end_idx if end_idx is not None else len(df)
+        df = df.iloc[start_idx:end_idx]
+        logger.info(f"[Download] Processing rows {start_idx} to {end_idx}")
 
-    logger.info(f"[Download] {len(all_urls)} URLs to download.")
+    all_urls = df['audio_link'].dropna().tolist()
+    logger.info(f"[Download] Found {len(all_urls)} valid URLs to download.")
 
-    # 세션 하나를 만들어 여러 스레드에서 공유 (HTTP Connection Pool 재사용)
+    # Create session for connection pooling
     session = create_session(pool_connections=DEFAULT_POOL_SIZE, pool_maxsize=DEFAULT_POOL_SIZE)
 
     results = []
@@ -283,7 +296,6 @@ def process_vad(
     output_dir,
     sample_rate=16000,
     min_speech_duration=0.5,
-    test_sample=None,
     n_processes=1
 ):
     """
@@ -295,10 +307,6 @@ def process_vad(
         for file in files:
             if file.lower().endswith('.mp3'):
                 audio_files.append(os.path.join(root, file))
-
-    # 2) 샘플링(테스트용) 
-    if test_sample:
-        audio_files = audio_files[:test_sample]
 
     logger.info(f"[VAD] Found {len(audio_files)} audio files.")
     os.makedirs(output_dir, exist_ok=True)
@@ -596,10 +604,11 @@ def generate_segments_metadata(cut_dir, output_csv, ext=".mp3", max_workers=8):
     """
     Generate metadata CSV for all cut segments.
     
-    CSV columns:
-    - original_file: 원본 파일 이름
-    - segment_index: 잘린 세그먼트의 인덱스
-    - duration_sec: 잘린 세그먼트 길이(초)
+    Args:
+        cut_dir: 잘린 오디오 세그먼트가 있는 디렉토리
+        output_csv: 저장할 CSV 파일 경로
+        ext: 오디오 파일 확장자
+        max_workers: 병렬 처리 워커 수
     """
     metadata = []
     cut_dir = pathlib.Path(cut_dir)
@@ -639,12 +648,13 @@ def generate_segments_metadata(cut_dir, output_csv, ext=".mp3", max_workers=8):
             if info:
                 # Extract segment info from filename
                 original_name = fpath.stem.rsplit('_', 1)[0]
-                segment_idx = fpath.stem.rsplit('_', 1)[1]
+                segment_idx = int(fpath.stem.rsplit('_', 1)[1])
                 
                 metadata.append({
+                    'segment_file': str(fpath.relative_to(cut_dir)),
                     'original_file': original_name,
                     'segment_index': segment_idx,
-                    'duration_sec': info['duration_sec'],
+                    'duration': info['duration_sec']
                 })
     
     # Create DataFrame and save to CSV
@@ -654,11 +664,11 @@ def generate_segments_metadata(cut_dir, output_csv, ext=".mp3", max_workers=8):
         logger.info(f"[Metadata] Saved to {output_csv}")
         
         # Print summary
-        total_duration = df['duration_sec'].sum() / 3600  # hours
+        total_duration = df['duration'].sum() / 3600  # hours
         logger.info(f"\n[Metadata Summary]")
         logger.info(f"Total segments: {len(df):,}")
         logger.info(f"Total duration: {total_duration:.2f} hours")
-        logger.info(f"Average duration: {df['duration_sec'].mean():.2f} seconds")
+        logger.info(f"Average duration: {df['duration'].mean():.2f} seconds")
         
     else:
         logger.info("[Metadata] No valid segments found")
@@ -737,17 +747,18 @@ def run_pipeline(args):
         elif stg == "cut":
             cut_dir.mkdir(parents=True, exist_ok=True)
 
-    # 1) Download
+    # 1) Download (modified to use CSV)
     if "download" in stages_to_run:
         stage_timer.start("download")
-        download_urls(
-            urls_file=f"urls.txt",
+        download_from_csv(
+            csv_path=args.metadata_csv,
             output_dir=download_dir,
-            test_sample=args.test_sample,
+            start_idx=args.start_idx,
+            end_idx=args.end_idx,
             n_threads=DEFAULT_THREADS_DOWNLOAD
         )
         stage_timer.end("download")
-        # 다운로드 직후 오디오 총 길이 출력
+        # Print total audio length after download
         total_hours = calculate_total_audio_hours(download_dir, ext=args.format)
         logger.info(f"\n[Audio Length] After download = {total_hours:.2f} hours")
 
@@ -759,7 +770,6 @@ def run_pipeline(args):
             output_dir=vad_dir,
             sample_rate=16000,               # VAD는 16kHz 사용
             min_speech_duration=args.min_speech_duration,
-            test_sample=args.test_sample,
             n_processes=args.n_processes
         )
         stage_timer.end("vad")
@@ -774,7 +784,6 @@ def run_pipeline(args):
             out_extension=".mp3",
             min_len_sec=15,
             max_len_sec=args.target_len_sec,
-            test_sample=args.test_sample,
             n_processes=args.n_processes
         )
         stage_timer.end("cut")
@@ -790,7 +799,10 @@ def run_pipeline(args):
         
         # Generate metadata CSV
         metadata_csv = "segments_metadata.csv"
-        generate_segments_metadata(cut_dir, metadata_csv)
+        generate_segments_metadata(
+            cut_dir=cut_dir,
+            output_csv=metadata_csv
+        )
 
     # 4) Remove intro
     if "intro" in stages_to_run:
@@ -819,19 +831,27 @@ def parse_args():
     parser.add_argument("--sample_rate", type=int, default=DEFAULT_SAMPLE_RATE,
                         help="Expected sample rate (normally 44100)")
 
-    parser.add_argument("--test_sample", type=int, default=None, help="For quick test: limit # of files")
+    # Replace test_sample with start_idx and end_idx
+    parser.add_argument("--start_idx", type=int, default=None, 
+                       help="Starting index in metadata CSV")
+    parser.add_argument("--end_idx", type=int, default=None,
+                       help="Ending index in metadata CSV")
+    
     parser.add_argument("--n_processes", type=int, default=DEFAULT_N_PROCESSES)
     parser.add_argument("--min_speech_duration", type=float, default=DEFAULT_MIN_SPEECH_DURATION)
     parser.add_argument("--target_len_sec", type=int, default=DEFAULT_TARGET_LEN_SEC,
                         help="Max length for each cut segment")
 
-    # 파이프라인 제어
+    # Add metadata CSV path argument
+    parser.add_argument("--metadata_csv", type=str, default="data/raw_audio_metadata.csv",
+                       help="Path to CSV file containing audio links")
+
+    # Pipeline control
     parser.add_argument("--start_stage", type=str, default="download")
     parser.add_argument("--end_stage", type=str, default="intro")
 
     args = parser.parse_args()
 
-    # 시작/종료 단계 검증
     if list(PIPELINE_STAGES.keys()).index(args.start_stage) > list(PIPELINE_STAGES.keys()).index(args.end_stage):
         parser.error("start_stage cannot come after end_stage")
 

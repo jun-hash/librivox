@@ -1,0 +1,4 @@
+2025-02-27 13:03:28 [INFO] [VAD] Loading model...
+2025-02-27 13:03:29 [INFO] [Download] Processing rows 0 to 5
+2025-02-27 13:03:29 [INFO] [Download] Found 5 valid URLs to download.
+2025-02-27 13:03:29 [INFO] [Download Summary] Success=5, Failed=0, Total=5
