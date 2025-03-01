@@ -1,9 +1,9 @@
 #!/bin/bash
-
+source .venv/bin/activate
 # 시작 시간 기록
 start_time=$(date +%s)
 
-python scripts/1_down_cut.py --start_idx 0 --end_idx 500
+python scripts/1_down_cut.py --start_idx 49075 --end_idx 49175
 
 # ASR 스크립트 실행 - 성공할 때까지 재시도
 max_attempts=3
