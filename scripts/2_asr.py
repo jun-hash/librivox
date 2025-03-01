@@ -37,17 +37,15 @@ class AudioDataset(Dataset):
             audio = decode_audio(input_file=audio_path, sampling_rate=self.sampling_rate)
         except Exception as e:
             print(f"Error decoding {audio_path}: {e}")
-            return None  # 스킵할 파일은 None을 반환
+            return None  # Return None to indicate an error
 
         # Measure duration in seconds
         duration_sec = len(audio) / self.sampling_rate
 
         # Compute mel spectrogram
-        features = self.model.feature_extractor(audio)[
-            ..., :-1
-        ]  # shape (n_mels, n_frames)
+        features = self.model.feature_extractor(audio)[..., :-1]  # shape (n_mels, n_frames)
 
-        # Pad or trim to max_len milliseconds
+        # Pad or trim to max_len * 100 ms
         features = pad_or_trim(features, self.max_len * 100)
 
         # Create metadata
@@ -62,15 +60,23 @@ class AudioDataset(Dataset):
 def audio_collate_fn(batch):
     """
     Custom collate function for audio batches.
-    Filters out None values from the batch.
+    Filters out None values from the batch and
+    returns (paths, features_stacked, metas, error_count).
     """
+    # Count how many items are None (i.e., decoding errors)
+    error_count = sum(item is None for item in batch)
+
+    # Filter out the None items
     batch = [item for item in batch if item is not None]
+
     if not batch:
-        return [], np.array([]), []
+        # If all items are None, return empty placeholders
+        return [], np.array([]), [], error_count
+
     # Unzip the batch into paths, features, and metadata
     paths, features, metas = zip(*batch)
     features_stacked = np.stack(features, axis=0)
-    return list(paths), features_stacked, list(metas)
+    return list(paths), features_stacked, list(metas), error_count
 
 
 def create_dataloader(audio_paths, model, batch_size, max_len=30, num_workers=4):
@@ -100,8 +106,10 @@ def transcribe_with_dataloader(
     os.makedirs(output_dir, exist_ok=True)
 
     # Load segments metadata
-    metadata_df = pd.read_csv('data/segments_metadata.csv')
-    metadata_df['confidence'] = None  # Add confidence column
+    metadata_df = pd.read_csv("data/segments_metadata.csv")
+    # Add a confidence column if it doesn't exist
+    if "confidence" not in metadata_df.columns:
+        metadata_df["confidence"] = None
 
     print(f"Scanning directory: {audio_dir}")
     audio_files = []
@@ -125,7 +133,7 @@ def transcribe_with_dataloader(
     # Initialize your ctranslate2 pipeline
     batched_pipeline = BatchedInferencePipeline(model)
 
-    # Create dataloader with the updated implementation
+    # Create dataloader
     dataloader = create_dataloader(
         audio_files,
         model,
@@ -136,11 +144,19 @@ def transcribe_with_dataloader(
 
     total_files_processed = 0
     total_transcription_time = 0.0
+    error_decode_count = 0  # Count of files that failed to decode
 
     # Create a progress bar for the dataloader
     pbar = tqdm(dataloader, desc="Transcribing batches", unit="batch")
 
-    for paths, features, metas in pbar:
+    for paths, features, metas, batch_error_count in pbar:
+        # Accumulate decode errors
+        error_decode_count += batch_error_count
+
+        # If the entire batch was decoding errors, skip
+        if len(paths) == 0:
+            continue
+
         start_time = time.time()
 
         results_list = batched_pipeline.forward_preprocessed(
@@ -158,11 +174,14 @@ def transcribe_with_dataloader(
             base_filename = os.path.basename(path)
             base = os.path.splitext(base_filename)[0]
             out_path = os.path.join(output_dir, f"{base}.txt")
-            
+
             # Update confidence in metadata DataFrame
             segment_file = os.path.basename(path)
-            metadata_df.loc[metadata_df['segment_file'] == segment_file, 'confidence'] = result['confidence']
+            metadata_df.loc[
+                metadata_df["segment_file"] == segment_file, "confidence"
+            ] = result["confidence"]
 
+            # Skip writing text if confidence below threshold
             if result["confidence"] < confidence_threshold:
                 continue
 
@@ -177,18 +196,19 @@ def transcribe_with_dataloader(
                 "processed": total_files_processed,
                 "batch_time": f"{batch_time:.2f}s",
                 "batch_processed": batch_processed,
+                "decode_errors": error_decode_count,
             }
         )
 
     # Save updated metadata with confidence values
-    metadata_df.to_csv('data/segments_metadata_confidence.csv', index=False)
-    
+    metadata_df.to_csv("data/segments_metadata_confidence.csv", index=False)
+
     # Calculate statistics for segments that passed confidence threshold
-    passed_segments = metadata_df[metadata_df['confidence'] >= confidence_threshold]
+    passed_segments = metadata_df[metadata_df["confidence"] >= confidence_threshold]
     total_segments = len(passed_segments)
-    total_duration = passed_segments['duration'].sum()
+    total_duration = passed_segments["duration"].sum()
     total_hours = total_duration / 3600  # Convert seconds to hours
-    
+
     # Save statistics to file
     stats_text = (
         f"ASR Processing Statistics\n"
@@ -197,42 +217,53 @@ def transcribe_with_dataloader(
         f"Total segments processed: {len(metadata_df)}\n"
         f"Segments passing confidence threshold ({confidence_threshold}): {total_segments}\n"
         f"Total audio duration: {total_hours:.2f} hours ({total_duration:.2f} seconds)\n"
-        f"Average segment duration: {(total_duration/total_segments):.2f} seconds\n"
+        f"Average segment duration: {(total_duration/total_segments if total_segments > 0 else 0):.2f} seconds\n"
         f"Total processing time: {total_transcription_time:.2f} seconds\n"
+        "\n"
+        # New lines regarding decoding errors
+        f"----- File-Level Summary -----\n"
+        f"Total new audio files found: {total_files}\n"
+        f"Error decoding: {error_decode_count}\n"
+        f"Successfully processed: {total_files_processed}\n"
+        f"(Note: successfully processed excludes files that had decode errors)\n"
     )
-    
+
     os.makedirs(os.path.dirname("data/final_segment.txt"), exist_ok=True)
     with open("data/final_segment.txt", "w", encoding="utf-8") as f:
         f.write(stats_text)
-    
+
     print("\nSegment Statistics:")
     print(f"Total segments passing confidence threshold ({confidence_threshold}): {total_segments}")
     print(f"Total duration: {total_hours:.2f} hours ({total_duration:.2f} seconds)")
-    print(f"Average segment duration: {(total_duration/total_segments):.2f} seconds")
-    
+    if total_segments > 0:
+        print(f"Average segment duration: {(total_duration / total_segments):.2f} seconds")
+
     print(
-        f"\nFinished all. Processed {total_files_processed} files. "
+        f"\nFinished all.\n"
+        f" - Total files found: {total_files}\n"
+        f" - Error decoding: {error_decode_count}\n"
+        f" - Successfully processed: {total_files_processed}\n"
         f"Total transcription time {total_transcription_time:.2f} seconds."
     )
+
     return total_files_processed, total_transcription_time
+
 
 if __name__ == "__main__":
     """
     Main entry point.
     Usage:
-        python batched_inference.py <start> <end>
+        python batched_inference.py
 
     This script:
-    1. Uses <start> and <end> to create paths for audio segments and their
-       corresponding output directories.
-    2. Loads a Whisper model (here, "whisper-d-ct2") from disk.
-    3. Runs the `process_directory` function on the audio segment directory.
+    1. Finds all audio files in ./data/cut, skipping any with existing transcripts in ./data/transcript.
+    2. Loads a Whisper model (here, "turbo").
+    3. Runs the `transcribe_with_dataloader` function on that directory.
     4. Prints a summary of total time and average time per file.
     """
     # Build folder/file paths
     audio_dir = "./data/cut"
     transcription_dir = "./data/transcript"
-    # segment_info_path = f"segment_info.csv"
 
     # Adjust batch size as desired
     BATCH_SIZE = 40
@@ -268,7 +299,7 @@ if __name__ == "__main__":
 
     # Print a concise summary
     print("\nTranscription Summary:")
-    print(f"Total files processed: {total_files}")
+    print(f"Total files successfully processed: {total_files}")
     print(f"Total transcription time: {total_transcription_time:.2f} seconds")
     print(f"Total execution time: {end_time - start_time:.2f} seconds")
     if total_files > 0:

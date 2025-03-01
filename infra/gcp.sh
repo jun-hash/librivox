@@ -9,9 +9,9 @@ echo "=== 가상환경 설정 ==="
 python3 -m venv venv
 tmux new -s my
 
-source venv/bin/activate
 git clone https://github.com/jun-hash/librivox.git
 cd librivox
 pip install -r requirements.txt
+source venv/bin/activate
 
-python scripts/1_down_cut.py --start_idx 98149 --end_idx 122690 --end_stage vad
+python scripts/1_down_cut.py --start_idx 24538 --end_idx 49074 --end_stage vad

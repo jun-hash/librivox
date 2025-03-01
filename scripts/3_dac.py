@@ -1,4 +1,5 @@
 import torch
+import argbind
 import sys
 import time
 import pandas as pd
@@ -256,14 +257,16 @@ if __name__ == "__main__":
     3. Runs the encoding process on the audio segment directory.
     4. Saves encoded .bin files in the output directory.
     """
-    input_dir = f"./data/cut"
-    output_dir = f"./data/codes"
-    whisper_dir = f"./data/transcript"
+  
+    # Build folder/file paths
+    input_dir = "data/cut"
+    output_dir = "data/codes"
+    whisper_dir = "data/transcript"
 
     # Model configuration
     MODEL_BITRATE = "8kbps"
     MODEL_TYPE = "44khz"
-    MAX_DURATION = 30.0
+    WIN_DURATION = 30.0
     BATCH_SIZE = 12
     NUM_WORKERS = 4
     PREFETCH_FACTOR = 2
@@ -293,7 +296,7 @@ if __name__ == "__main__":
         batch_size=BATCH_SIZE,
         num_workers=NUM_WORKERS,
         prefetch_factor=PREFETCH_FACTOR,
-        max_duration_s=MAX_DURATION,
+        max_duration_s=WIN_DURATION,
         normalize_db=NORMALIZE_DB,
     )
 
