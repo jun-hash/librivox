@@ -30,7 +30,7 @@ if [ "$asr_success" = false ]; then
     exit 1
 fi
 
-python -m dac encode ./data/cut/ --output ./data/codes 
+python scripts/3_dac.py
 
 # 종료 시간 기록 및 총 소요 시간 계산
 end_time=$(date +%s)
