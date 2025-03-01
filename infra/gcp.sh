@@ -14,4 +14,4 @@ git clone https://github.com/jun-hash/librivox.git
 cd librivox
 pip install -r requirements.txt
 
-python scripts/1_down_cut.py --start_idx 0 --end_idx 12269 --end_stage vad
+python scripts/1_down_cut.py --start_idx 98149 --end_idx 122690 --end_stage vad

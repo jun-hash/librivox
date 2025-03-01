@@ -7,4 +7,4 @@ matplotlib>=3.4.0
 pandas>=2.0.0
 requests>=2.31.0
 git+https://github.com/wonder-dot-ai/faster-whisper.git
-git+https://github.com/wonder-dot-ai/descript-audio-codec.git
+git+https://github.com/wonder-dot-ai/descript-audio-codec.git@75b17b7f85b6d87678392882f3241fb3a1cf62cc

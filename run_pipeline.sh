@@ -3,7 +3,7 @@
 # 시작 시간 기록
 start_time=$(date +%s)
 
-python scripts/1_down_cut.py --start_idx 0 --end_idx 10
+python scripts/1_down_cut.py --start_idx 0 --end_idx 500
 
 # ASR 스크립트 실행 - 성공할 때까지 재시도
 max_attempts=3
@@ -30,7 +30,7 @@ if [ "$asr_success" = false ]; then
     exit 1
 fi
 
-python scripts/3_dac.py
+python -m dac encode ./data/cut/ --output ./data/codes 
 
 # 종료 시간 기록 및 총 소요 시간 계산
 end_time=$(date +%s)
