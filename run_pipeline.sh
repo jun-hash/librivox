@@ -1,5 +1,5 @@
 #!/bin/bash
-source .venv/bin/activate
+source ../.venv/bin/activate
 # 시작 시간 기록
 start_time=$(date +%s)
 
